@@ -55,14 +55,14 @@ const Hero = () => {
                       <h3 className="sm:text-lg text-xs mb-5">
                         {slider.description}
                       </h3>
-                      <button className="btn bg-transparent text-black rounded-full hover:bg-white">
+                      <button className="btn bg-transparent text-sm text-black rounded-full hover:bg-white">
                         Shop Now
                       </button>
                     </div>
                   </div>
                 </div>
                 <div className="w-full sm:flex-1">
-                  <img className="w-full h-96" src={slider.image} alt="" />
+                  <img className="sm:w-full w-[90%] sm:h-96 h-44" src={slider.image} alt="" />
                 </div>
               </div>
             </>

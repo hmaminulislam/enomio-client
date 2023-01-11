@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import OfferModal from '../../common/modal/OfferModal';
+import Categories from './hero/Categories';
 import Hero from './hero/Hero';
+import ServicesInfo from './hero/ServicesInfo';
 import './Home.css'
 
 const Home = () => {
@@ -18,7 +20,10 @@ const Home = () => {
             <Hero />
         </div>
         <div className='px-5 md:px-10 lg:px-14'>
-            
+            <ServicesInfo />
+        </div>
+        <div className='md:px-10 lg:px-14 px-2'>
+            <Categories />
         </div>
         </>
     );
