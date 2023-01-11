@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = ({mobileMenu, setMobileMenu}) => {
     return (
@@ -7,15 +8,16 @@ const Navbar = ({mobileMenu, setMobileMenu}) => {
             <div className='pt-5 flex justify-between'>
                 <div>
                     <ul className='flex'>
-                        <li className='menu-link mr-7'>Home</li>
+                        <NavLink to='/'><li className='menu-link mr-7'>Home</li></NavLink>
                         <li className='menu-link mr-7'>Categories</li>
                         <li className='menu-link mr-7'>Products</li>
                         <li className='menu-link mr-7'>Blog</li>
-                        <li className='menu-link mr-7'>About</li>
+                        <NavLink to='/about'><li className='menu-link mr-7'>About</li></NavLink>
                     </ul>
                 </div>
-                <div>
-                    <h4>Something</h4>
+                <div className='flex items-center'>
+                    <i class="fa-solid fa-tag text-xl mr-2 text-gray-600"></i>
+                    <h4 className='font-semibold'>Special Offers</h4>
                 </div>
             </div>
         </div>

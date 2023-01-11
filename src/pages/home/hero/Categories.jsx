@@ -48,7 +48,7 @@ const Categories = () => {
         },
     ]
     return (
-        <div className='mt-10'>
+        <div className='mt-20'>
             <h2 className='sm:text-2xl text-xl mb-5 text-center sm:text-left'>Categories</h2>
             <Swiper
             breakpoints={{
@@ -60,7 +60,7 @@ const Categories = () => {
                 // when window width is >= 768px
                 768: {
                 width: 768,
-                slidesPerView: 4,
+                slidesPerView: 5,
                 },
             }}
         loop={true}
@@ -73,9 +73,9 @@ const Categories = () => {
       >
         {categories.map(cate => <>
             <SwiperSlide>
-                <div className=''>
+                <div className='cursor-pointer categories-container'>
                     <img className='rounded-full w-20 sm:w-28 mx-auto' src={cate.img} alt="" />
-                    <h4 className='sm:text-lg text-sm text-center'>{cate.name}</h4>
+                    <h4 className='sm:text-lg text-sm text-center categories-name'>{cate.name}</h4>
                 </div>
             </SwiperSlide>
         </>)}

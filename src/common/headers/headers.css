@@ -25,6 +25,7 @@
 .menu-link {
     position: relative;
     cursor: pointer;
+    color: #207398;
 }
 .menu-link::after {
     position: absolute;
@@ -38,4 +39,7 @@
 }
 .menu-link:hover::after {
     width: 100%;
+}
+.search {
+    background-color: transparent;
 }

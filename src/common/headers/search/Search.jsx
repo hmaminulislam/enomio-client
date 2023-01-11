@@ -10,9 +10,9 @@ const Search = ({setMobileMenu}) => {
                 <h3 className='text-2xl sm:text-4xl font-bold secondary-text uppercase'>Enomio</h3>
             </div>
             <div className='flex-1 hidden md:block'>
-                <div className='border-2 py-2 border-gray-300 rounded-sm px-3 w-100 flex justify-between'>
-                    <input className='outline-none' type="text" name="" placeholder='Search..' />
-                    <i class="fa-solid fa-magnifying-glass text-xl text-gray-600"></i>
+                <div className='border-2 h-12 border-gray-300 rounded-sm w-100 flex justify-between items-center'>
+                    <input className='outline-none w-full h-full px-3 search' type="text" name="" placeholder='Search..' />
+                    <i class="flex-auto fa-solid fa-magnifying-glass text-xl text-gray-600 mr-3 pl-3"></i>
                 </div>
             </div>
             <div className='flex-1 flex justify-end md:ml-4 lg:ml-0'>

@@ -10,3 +10,41 @@
 .service-box {
     box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1);
 }
+
+/* Trending category */
+.trending-women {
+    background: url('../../assets/img/trending-category/trending-1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 250px;
+}
+.trending-shoes {
+    background: url('../../assets/img/trending-category/trending-2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 250px;
+}
+.btn-container {
+    position: relative;
+    width: 105px;
+}
+.btn-trending::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background-color: #32a8e8;
+    transition: ease-in 0.3s;
+}
+.btn-container:hover .btn-trending::after {
+    width: 100%;
+}
+
+/* Categories */
+.categories-container:hover .categories-name {
+    color: #0f85c5
+}

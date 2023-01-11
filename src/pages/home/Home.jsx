@@ -3,6 +3,7 @@ import OfferModal from '../../common/modal/OfferModal';
 import Categories from './hero/Categories';
 import Hero from './hero/Hero';
 import ServicesInfo from './hero/ServicesInfo';
+import TrendingCategory from './hero/TrendingCategory';
 import './Home.css'
 
 const Home = () => {
@@ -13,6 +14,12 @@ const Home = () => {
             setModalOpen(true)
         }, 2000)
     }
+    if(modalOpen) {
+        document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+    }
+    else if (!modalOpen) {
+        document.body.style.backgroundColor = "rgba(0, 0, 0, 0)";
+    }
     return (
         <>
         {modalOpen? <OfferModal setModalOpen={setModalOpen} /> : ''}
@@ -20,6 +27,7 @@ const Home = () => {
             <Hero />
         </div>
         <div className='px-5 md:px-10 lg:px-14'>
+            <TrendingCategory />
             <ServicesInfo />
         </div>
         <div className='md:px-10 lg:px-14 px-2'>

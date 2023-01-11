@@ -9,8 +9,15 @@
     z-index: 999999;
     display: flex;
     align-items: center;
-    padding: 45px 10px;
+    padding: 55px 10px;
     border-radius: 10px;
+}
+.offer-email {
+    border: 1px solid #000000;
+}
+.offer-icon {
+    border: 1px solid #000000;
+    padding-top: 5px;
 }
 @media screen and (max-width: 640px) {
     .offer-modal {
