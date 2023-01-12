@@ -1,0 +1,36 @@
+.quick-view-img {
+    background-color: #f1f2f5;
+    max-height: 480px;
+    width: 45%;
+    padding: 45px 45px;
+    margin-right: 25px;
+}
+.quick-view-size {
+    border: 1px solid #ddd;
+    font-size: 13px;
+    margin-left: 10px;
+    padding: 2px 10px;
+    outline: none;
+}
+.quantity-icon {
+    border: 1px solid #ddd;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quantity-icon:hover {
+    background-color: #f1f2f5;
+    cursor: pointer;
+}
+.quantity-result {
+    border: 1px solid #ddd;
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

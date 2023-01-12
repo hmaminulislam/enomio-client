@@ -16,7 +16,7 @@ const Navbar = ({mobileMenu, setMobileMenu}) => {
                     </ul>
                 </div>
                 <div className='flex items-center'>
-                    <i class="fa-solid fa-tag text-xl mr-2 text-gray-600"></i>
+                    <i className="fa-solid fa-tag text-xl mr-2 text-gray-600"></i>
                     <h4 className='font-semibold'>Special Offers</h4>
                 </div>
             </div>
@@ -33,7 +33,7 @@ const Navbar = ({mobileMenu, setMobileMenu}) => {
                         <li className='mb-3'>About</li>
                     </ul>
                 </div>
-                <i onClick={() => setMobileMenu(false)}class="fa-solid fa-xmark text-3xl cursor-pointer absolute top-[10px] right-[10px]"></i>
+                <i onClick={() => setMobileMenu(false)}className="fa-solid fa-xmark text-3xl cursor-pointer absolute top-[10px] right-[10px]"></i>
             </div>
         </div>
         </>

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import OfferModal from '../../common/modal/OfferModal';
-import Categories from './hero/Categories';
+import Categories from './categories/Categories';
 import Hero from './hero/Hero';
-import ServicesInfo from './hero/ServicesInfo';
-import TrendingCategory from './hero/TrendingCategory';
+import ServicesInfo from './services-info/ServicesInfo';
+import TrendingCategory from './trending-category/TrendingCategory';
 import './Home.css'
+import BestSelling from './best-selling/BestSelling';
 
 const Home = () => {
     const [modalOpen, setModalOpen] = useState(false);
@@ -32,6 +33,7 @@ const Home = () => {
         </div>
         <div className='md:px-10 lg:px-14 px-2'>
             <Categories />
+            <BestSelling />
         </div>
         </>
     );

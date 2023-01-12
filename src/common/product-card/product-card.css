@@ -1,0 +1,39 @@
+.product-container:hover .product-icon-container {
+    opacity: 1;
+}
+.product-container:hover .quick-btn {
+    opacity: 1;
+}
+.product-img {
+    background-color: #f2f3f5;
+    position: relative;
+}
+.product-icon-container {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    opacity: 0;
+    transition: all ease 0.3s;
+}
+.product-icon {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    text-align: center;
+}
+.quick-btn {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #31a6e9da;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    color: #ffffff;
+    font-weight: 500;
+    opacity: 0;
+    transition: all ease 0.3s;
+}
+.quick-btn:hover {
+    background-color: #31a6e9;
+    cursor: pointer;
+}

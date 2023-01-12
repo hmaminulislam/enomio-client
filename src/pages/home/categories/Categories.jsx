@@ -26,7 +26,7 @@ const Categories = () => {
             name: 'T-Shirt',
             img: tshirt
         },
-        {
+        {   
             name: 'Laptop',
             img: laptop
         },
@@ -71,14 +71,14 @@ const Categories = () => {
         modules={[FreeMode]}
         className="mySwiper"
       >
-        {categories.map(cate => <>
-            <SwiperSlide>
+        {categories.map((cate, index) => <div key={index}>
+            <SwiperSlide key={index}>
                 <div className='cursor-pointer categories-container'>
                     <img className='rounded-full w-20 sm:w-28 mx-auto' src={cate.img} alt="" />
                     <h4 className='sm:text-lg text-sm text-center categories-name'>{cate.name}</h4>
                 </div>
             </SwiperSlide>
-        </>)}
+        </div>)}
       </Swiper>
         </div>
     );

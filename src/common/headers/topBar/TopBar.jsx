@@ -9,15 +9,15 @@ const TopBar = () => {
                 </div>
                 <div className='flex'>
                     <div className='flex items-center mr-8'>
-                        <i class="fa-solid text-gray-300 fa-location-dot mr-1"></i>
+                        <i className="fa-solid text-gray-300 fa-location-dot mr-1"></i>
                         <h4 className='text-xs text-white'>Contact</h4>
                     </div>
                     <div className='flex items-center mr-8'>
-                        <i class="fa-solid text-gray-300 fa-circle-info mr-1"></i>
+                        <i className="fa-solid text-gray-300 fa-circle-info mr-1"></i>
                         <h4 className='text-xs text-white'>Need help</h4>
                     </div>
                     <div className='flex items-center'>
-                        <i class="fa-solid text-gray-300 fa-user mr-1"></i>
+                        <i className="fa-solid text-gray-300 fa-user mr-1"></i>
                         <h4 className='text-xs text-white'>Sign in</h4>
                         <span className='text-white px-1'>/</span>
                         <h4 className='text-xs text-white'>Register</h4>
