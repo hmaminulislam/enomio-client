@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { addToCartDb } from '../../utilities/AddToCart';
 import QuickViewModal from '../quick-view-modal/QuickViewModal';
 import './product-card.css';
 
@@ -14,7 +15,7 @@ const ProductCard = ({products}) => {
                         <img className='h-full mx-auto' src={pro.img} alt="" />
                         <div className='product-icon-container'>
                             <i class="fa-regular fa-heart product-icon block mb-2 p-3 rounded-full hover:bg-sky-500 hover:text-white cursor-pointer"></i>
-                            <i class="fa-solid fa-bag-shopping product-icon block p-3 rounded-full hover:bg-sky-500 hover:text-white cursor-pointer"></i>
+                            <i onClick={() => addToCartDb(pro.id, 1)} class="fa-solid fa-bag-shopping product-icon block p-3 rounded-full hover:bg-sky-500 hover:text-white cursor-pointer"></i>
                         </div>
                         <label onClick={() => setProduct(pro)} htmlFor="QuickViewModal" className='quick-btn'>Quick view</label>
                     </div>

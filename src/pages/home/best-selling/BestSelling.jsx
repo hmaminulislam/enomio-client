@@ -7,12 +7,12 @@ const BestSelling = () => {
         const getProduct = async () => {
             const res = await fetch('http://localhost:5000/products')
             const data = await res.json()
-            setProducts(data)
+            setProducts(data.slice(0, 8))
         }
         getProduct()
     }, [])
     return (
-        <div className='mt-14'>
+        <div className='my-14'>
             <div>
                 <h3 className='mb-3 text-xl'>Best Selling</h3>
             </div>

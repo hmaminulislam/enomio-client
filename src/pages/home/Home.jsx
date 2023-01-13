@@ -33,6 +33,8 @@ const Home = () => {
         </div>
         <div className='md:px-10 lg:px-14 px-2'>
             <Categories />
+        </div>
+        <div className='px-5 md:px-10 lg:px-14'>
             <BestSelling />
         </div>
         </>

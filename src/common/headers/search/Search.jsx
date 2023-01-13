@@ -1,6 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getAddToCartDb } from '../../../utilities/AddToCart';
 
 const Search = ({setMobileMenu}) => {
+    const [productCart, setProductCart] = useState(0)
+    useEffect( () => {
+        const cart = getAddToCartDb()
+        console.log(cart);
+        let count = 0;
+        for(let key in cart) {
+            ++count;
+        }
+        setProductCart(count)
+    }, [])
+
     return (
         <div className='flex justify-between pt-5 px-5 md:px-10 lg:px-14'>
             <div className='md:hidden mr-5'>
@@ -30,7 +42,7 @@ const Search = ({setMobileMenu}) => {
                 </div>
                 <div className="relative mr-4 sm:mr-8 md:mr-0">
                     <i className="fa-solid fa-cart-shopping sm:text-3xl text-2xl"></i>
-                    <span className='bg-red-400 w-6 h-6 rounded-full text-center inline-block absolute top-[-7px] right-[-7px]'>0</span>
+                    <span className='bg-red-400 w-6 h-6 rounded-full text-center inline-block absolute top-[-7px] right-[-7px] text-white'>{productCart}</span>
                 </div>
                 <div className='block md:hidden'>
                     <i className="fa-regular fa-user sm:text-3xl text-2xl"></i>
