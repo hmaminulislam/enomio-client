@@ -19,8 +19,11 @@
     background: #797979;
 }
 .mobile-menu {
-    height: calc(100vh);
+    height: 100vh;
     width: 320px;
+    background-color: white;
+    position: fixed;
+    box-shadow: 2px 5px 10px 0 rgba(0, 0, 0, 0.1);
 }
 .menu-link {
     position: relative;

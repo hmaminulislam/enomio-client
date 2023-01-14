@@ -1,0 +1,19 @@
+.shop-details-img {
+    background-color: #f1f2f5;
+    max-height: 480px;
+    width: 100%;
+    padding: 45px 45px;
+    margin-right: 25px;
+}
+
+@media screen and (min-width: 640px) {
+    .shop-details-img {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 940px) {
+    .shop-details-img {
+        width: 50%;
+    }
+}

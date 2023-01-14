@@ -42,7 +42,7 @@ const Search = ({setMobileMenu}) => {
                 </div>
                 <div className="relative mr-4 sm:mr-8 md:mr-0">
                     <i className="fa-solid fa-cart-shopping sm:text-3xl text-2xl"></i>
-                    <span className='bg-red-400 w-6 h-6 rounded-full text-center inline-block absolute top-[-7px] right-[-7px] text-white'>{productCart}</span>
+                    <span className='bg-red-400 w-5 h-5 rounded-full text-center inline-block absolute top-[-7px] right-[-7px] text-white text-xs'>{productCart}</span>
                 </div>
                 <div className='block md:hidden'>
                     <i className="fa-regular fa-user sm:text-3xl text-2xl"></i>

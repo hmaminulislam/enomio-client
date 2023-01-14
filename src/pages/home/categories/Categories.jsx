@@ -7,7 +7,7 @@ import women from '../../../assets/img/categories/women.jpg'
 import tshirt from '../../../assets/img/categories/t-shirt.png'
 import laptop from '../../../assets/img/categories/laptop.png'
 import bag from '../../../assets/img/categories/bag.jpg'
-import jecket from '../../../assets/img/categories/jeket.jpg'
+import jacket from '../../../assets/img/categories/jeket.jpg'
 import pen from '../../../assets/img/categories/pen.jpg'
 import shoes from '../../../assets/img/categories/shoes.jpg'
 import { FreeMode } from 'swiper';
@@ -35,8 +35,8 @@ const Categories = () => {
             img: bag
         },
         {
-            name: 'Jecket',
-            img: jecket
+            name: 'Jacket',
+            img: jacket
         },
         {
             name: 'Pen',

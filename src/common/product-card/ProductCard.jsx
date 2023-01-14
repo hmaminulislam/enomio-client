@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { addToCartDb } from '../../utilities/AddToCart';
 import QuickViewModal from '../quick-view-modal/QuickViewModal';
 import './product-card.css';
@@ -12,7 +13,7 @@ const ProductCard = ({products}) => {
                 products?.map(pro => 
                 <div className='product-container'>
                     <div className='h-64 product-img'>
-                        <img className='h-full mx-auto' src={pro.img} alt="" />
+                        <Link to={`/shop/${pro._id}`}><img className='h-full mx-auto' src={pro.img} alt="" /></Link>
                         <div className='product-icon-container'>
                             <i class="fa-regular fa-heart product-icon block mb-2 p-3 rounded-full hover:bg-sky-500 hover:text-white cursor-pointer"></i>
                             <i onClick={() => addToCartDb(pro.id, 1)} class="fa-solid fa-bag-shopping product-icon block p-3 rounded-full hover:bg-sky-500 hover:text-white cursor-pointer"></i>

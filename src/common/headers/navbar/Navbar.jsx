@@ -10,7 +10,7 @@ const Navbar = ({mobileMenu, setMobileMenu}) => {
                     <ul className='flex'>
                         <NavLink to='/'><li className='menu-link mr-7'>Home</li></NavLink>
                         <li className='menu-link mr-7'>Categories</li>
-                        <li className='menu-link mr-7'>Products</li>
+                        <NavLink to='/shop'><li className='menu-link mr-7'>Shop</li></NavLink>
                         <li className='menu-link mr-7'>Blog</li>
                         <NavLink to='/about'><li className='menu-link mr-7'>About</li></NavLink>
                     </ul>
@@ -23,8 +23,8 @@ const Navbar = ({mobileMenu, setMobileMenu}) => {
         </div>
         {/* Mobile menu */}
         <div className={`absolute z-[999] top-0 ${mobileMenu ? 'left-0 ease-in duration-500' : 'left-[-400px] ease-out duration-500'}`}>
-            <div className="relative">
-                <div className="mobile-menu bg-base-300 text-base-content">
+            <div className="relative mobile-menu">
+                <div className="text-base-content">
                     <ul className="p-4">
                         <li className='mb-3'>Home</li>
                         <li className='mb-3'>Categories</li>
