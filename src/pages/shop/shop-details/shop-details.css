@@ -5,7 +5,6 @@
     padding: 45px 45px;
     margin-right: 25px;
 }
-
 @media screen and (min-width: 640px) {
     .shop-details-img {
         width: 80%;

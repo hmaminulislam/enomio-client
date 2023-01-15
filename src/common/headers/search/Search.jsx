@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider';
 import { getAddToCartDb } from '../../../utilities/AddToCart';
 
 const Search = ({setMobileMenu}) => {
-    const [productCart, setProductCart] = useState(0)
+    const [productCart, setProductCart] = useState(0);
+    const {cart, setCart} = useContext(AuthContext)
     useEffect( () => {
-        const cart = getAddToCartDb()
-        console.log(cart);
+        const cartDb = getAddToCartDb()
         let count = 0;
-        for(let key in cart) {
+        for(let key in cartDb) {
             ++count;
         }
         setProductCart(count)
-    }, [])
+        setCart(false)
+    }, [cart])
 
     return (
         <div className='flex justify-between pt-5 px-5 md:px-10 lg:px-14'>
@@ -40,10 +43,10 @@ const Search = ({setMobileMenu}) => {
                 <div className='sm:mr-8 mr-4'>
                     <i className="fa-regular fa-heart sm:text-3xl text-2xl"></i>
                 </div>
-                <div className="relative mr-4 sm:mr-8 md:mr-0">
+                <Link to={'/cart'} className="relative mr-4 sm:mr-8 md:mr-0">
                     <i className="fa-solid fa-cart-shopping sm:text-3xl text-2xl"></i>
                     <span className='bg-red-400 w-5 h-5 rounded-full text-center inline-block absolute top-[-7px] right-[-7px] text-white text-xs'>{productCart}</span>
-                </div>
+                </Link>
                 <div className='block md:hidden'>
                     <i className="fa-regular fa-user sm:text-3xl text-2xl"></i>
                 </div>

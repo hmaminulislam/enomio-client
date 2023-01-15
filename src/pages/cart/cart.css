@@ -1,0 +1,11 @@
+.remove-cart-icon {
+    position: absolute;
+    right: 7px;
+    top: 7px;
+
+}
+.remove-cart-icon:hover {
+    background-color: #2b2a2a;
+    cursor: pointer;
+}
+
