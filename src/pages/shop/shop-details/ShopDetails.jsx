@@ -9,7 +9,7 @@ const ShopDetails = () => {
     const [quantity, setQuantity] = useState(1);
     const {setCart} = useContext(AuthContext)
     const product = useLoaderData();
-    const {img, name, category, price, shortText, _id} = product;
+    const {img, name, category, price, shortText} = product;
     console.log(product);
     // handle quantity minus button
     const handleQuantity = () => {
@@ -22,7 +22,7 @@ const ShopDetails = () => {
         }
     }
     const handleCart = () => {
-        addToCartDb(_id, quantity)
+        addToCartDb(product, quantity)
         setCart(true)
     }
     return (

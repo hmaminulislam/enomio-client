@@ -9,3 +9,12 @@
     cursor: pointer;
 }
 
+.cart-total {
+    height: 540px;
+}
+
+@media screen and (min-width: 1024px) {
+    .cart-total {
+            height: 460px;
+        }
+}

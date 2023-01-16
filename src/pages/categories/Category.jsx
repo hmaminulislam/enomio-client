@@ -1,7 +1,7 @@
 import React from 'react';
 import img from '../../assets/img/comming-soon/commin-soon.png'
 
-const About = () => {
+const Category = () => {
     return (
         <div className='my-20'>
             <img className='md:w-[50%] w-[70%] mx-auto' src={img} alt="" />
@@ -9,4 +9,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default Category;

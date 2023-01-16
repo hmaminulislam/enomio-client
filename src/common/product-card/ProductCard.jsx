@@ -9,9 +9,9 @@ const ProductCard = ({products}) => {
     const number = '0.00';
     const [product, setProduct] = useState('');
     const {setCart} = useContext(AuthContext)
-    const handleAddToCart = (id) => {
+    const handleAddToCart = (product) => {
         setCart(true)
-        addToCartDb(id, 1)
+        addToCartDb(product, 1)
     }
     return (
         <>
@@ -22,7 +22,7 @@ const ProductCard = ({products}) => {
                         <Link to={`/shop/${pro._id}`}><img className='h-full mx-auto' src={pro.img} alt="" /></Link>
                         <div className='product-icon-container'>
                             <i className="fa-regular fa-heart product-icon block mb-2 p-3 rounded-full hover:bg-sky-500 hover:text-white cursor-pointer"></i>
-                            <i onClick={() => handleAddToCart(pro._id)} className="fa-solid fa-bag-shopping product-icon block p-3 rounded-full hover:bg-sky-500 hover:text-white cursor-pointer"></i>
+                            <i onClick={() => handleAddToCart(pro)} className="fa-solid fa-bag-shopping product-icon block p-3 rounded-full hover:bg-sky-500 hover:text-white cursor-pointer"></i>
                         </div>
                         <label onClick={() => setProduct(pro)} htmlFor="QuickViewModal" className='quick-btn'>Quick view</label>
                     </div>

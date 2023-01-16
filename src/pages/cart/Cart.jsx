@@ -1,17 +1,32 @@
 import React, { useEffect, useState } from 'react';
+import { addToCartDb } from '../../utilities/AddToCart';
 import './cart.css'
 
 const Cart = () => {
     const [products, setProducts] = useState([])
-    console.log(products);
+    const [refresh, setRefresh] = useState(false);
+
     useEffect( () => {
-        const getProducts = async () => {
-            const res = await fetch('http://localhost:5000/products');
-            const data = await res.json()
-            setProducts(data.slice(0, 3))
+        const getProducts = JSON.parse(localStorage.getItem("enomio-cart"))
+        setProducts(getProducts)
+    }, [refresh]);
+
+    let allSubTotal = 0;
+    for(const element of products) {
+        allSubTotal += (element.price * element.quantity)
+    }
+    const handleplusQuantity = (product) => {
+        addToCartDb(product, 1)
+        setRefresh(!refresh)
+    }
+    const handleMinusQuantity = (product) => {
+        if(product.quantity < 2) {
+            return
         }
-        getProducts()
-    }, [])
+        addToCartDb(product, - 1)
+        setRefresh(!refresh)
+    }
+    
     return (
         <div className='lg:flex justify-between px-5 md:px-10 lg:px-14 my-20'>
             <div className='md:block hidden lg:flex-auto lg:mr-5 mr-0'>
@@ -43,16 +58,16 @@ const Cart = () => {
                                 </td>
                                 <td>
                                     <div className='flex items-center justify-center'>
-                                        <i onClick={''} className="fa-solid fa-minus quantity-icon"></i>
-                                        <h5 className='quantity-result'>{1}</h5>
-                                        <i onClick={''} className="fa-solid fa-plus quantity-icon"></i>
+                                        <i onClick={() => handleMinusQuantity(pro)} className="fa-solid fa-minus quantity-icon"></i>
+                                        <h5 className='quantity-result'>{pro.quantity}</h5>
+                                        <i onClick={() => handleplusQuantity(pro)} className="fa-solid fa-plus quantity-icon"></i>
                                     </div>
                                 </td>
                                 <td className='text-center'>
-                                    ${pro.price}
+                                    ${pro.quantity * pro.price}
                                 </td>
                                 <td className='text-center'>
-                                    <i className="fa-solid fa-xmark bg-slate-400 w-6 h-6 rounded-full text-white flex items-center justify-center"></i>
+                                    <i className="fa-solid fa-xmark bg-slate-400 hover:bg-slate-700 cursor-pointer w-6 h-6 rounded-full text-white flex items-center justify-center"></i>
                                 </td>
                             </tr>
                         </>)
@@ -71,25 +86,25 @@ const Cart = () => {
                             <h3 className='text-sm text-center mt-2'>{pro.name}</h3>
                             <h3 className='text-sm text-center mt-2'><span className='font-semibold'>Price: </span>${pro.price}</h3>
                             <div className='flex items-center justify-center mt-3'>
-                                <i onClick={''} className="fa-solid fa-minus quantity-icon"></i>
-                                <h5 className='quantity-result'>{1}</h5>
-                                <i onClick={''} className="fa-solid fa-plus quantity-icon"></i>
+                                <i onClick={() => handleMinusQuantity(pro)} className="fa-solid fa-minus quantity-icon"></i>
+                                <h5 className='quantity-result'>{pro.quantity}</h5>
+                                <i onClick={() => handleplusQuantity(pro)} className="fa-solid fa-plus quantity-icon"></i>
                             </div>
-                            <h3 className='text-sm text-center mt-2'><span className='font-semibold'>Subtotal: </span>${pro.price}</h3>
+                            <h3 className='text-sm text-center mt-2'><span className='font-semibold'>Subtotal: </span>${pro.quantity * pro.price}</h3>
                             <i className="fa-solid fa-xmark bg-slate-400 w-6 h-6 rounded-full text-white flex items-center justify-center remove-cart-icon"></i>
                         </div>
                     </>)
                 }
             </div>
-            <div className='lg:w-80 w-full border border-gray-300 lg:px-8 px-20 py-10 lg:py-0'>
+            <div className='lg:w-80 cart-total w-full border border-gray-300 lg:px-8 px-20 py-10 lg:py-0'>
                 <h4 className='text-lg font-semibold mt-5'>Cart Totals</h4>
                 <div className='flex justify-between border-b border-gray-200 pb-2 pt-4'>
                     <h4 className='font-semibold text-sm'>Subtotal</h4>
-                    <h4 className='text-sm'>${'949'}</h4>
+                    <h4 className='text-sm'>${allSubTotal}</h4>
                 </div>
                 <h4 className='font-semibold text-sm mt-4'>Shipping</h4>
                 <div className='flex items-center mb-2 mt-3'>
-                    <input type="radio" id='local' name="radio-2" className="radio checked:bg-blue-500 radio-sm mr-3" checked />
+                    <input  type="radio" id='local' name="radio-2" className="radio checked:bg-blue-500 radio-sm mr-3" checked />
                     <label className='text-sm text-gray-500' htmlFor="local">Local pickup</label>
                 </div>
                 <div className='flex items-center'>
@@ -103,9 +118,9 @@ const Cart = () => {
                 <hr />
                 <div className='flex items-center justify-between mt-4'>
                     <h4 className='font-semibold'>Total</h4>
-                    <h4 className='text-gray-500 font-semibold'>${'8744'}</h4>
+                    <h4 className='text-gray-500 font-semibold'>${allSubTotal}</h4>
                 </div>
-                <button className='w-full bg-slate-800 py-3 text-white text-sm font-semibold mt-4'>PROCEED TO CHECKOUT</button>
+                <button className='w-full bg-slate-800 hover:bg-gray-700 py-3 text-white text-sm font-semibold lg:mt-5 mt-10'>PROCEED TO CHECKOUT</button>
             </div>
         </div>
     );

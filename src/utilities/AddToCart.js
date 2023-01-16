@@ -1,18 +1,24 @@
-const addToCartDb = (id, quan) => {
-  let shoppingCart = {};
-  const storedCart = localStorage.getItem("shopping-cart");
-  if (storedCart) {
-    shoppingCart = JSON.parse(storedCart);
-  }
+const addToCartDb = (product, quantity) => {
+  const {img, name, price, _id} = product;
 
-  const quantity = shoppingCart[id];
-  if (quantity) {
-    const newQuantity = quantity + quan;
-    shoppingCart[id] = newQuantity;
+  let shoppingCart = [];
+  const cart = { _id, name, img, quantity: quantity, price };
+
+  const getCartDb = JSON.parse(localStorage.getItem("enomio-cart"));
+
+  if(!getCartDb) {
+    shoppingCart.push(cart)
   } else {
-    shoppingCart[id] = 1;
+    shoppingCart = getCartDb
+    const stored = shoppingCart.find(pro => pro._id === _id);
+    if(stored) {
+      stored.quantity = stored.quantity + quantity
+    } else {
+      shoppingCart.push(cart)
+    }
   }
-  localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
+  
+  localStorage.setItem("enomio-cart", JSON.stringify(shoppingCart));
   return shoppingCart;
 };
 
@@ -20,7 +26,7 @@ const getAddToCartDb = () => {
   let shoppingCart = {};
   const storedCart = localStorage.getItem("shopping-cart");
   if (storedCart) {
-    shoppingCart = JSON.parse(storedCart);
+    shoppingCart['data'] = JSON.parse(storedCart);
   }
   return shoppingCart;
 };

@@ -6,7 +6,7 @@ import './quick-view-modal.css'
 const QuickViewModal = ({product}) => {
     const [quantity, setQuantity] = useState(1);
     const {setCart} = useContext(AuthContext)
-    const {img, name, category, price, shortText, _id} = product;
+    const {img, name, category, price, shortText} = product;
     // handle quantity minus button
     const handleQuantity = () => {
         if(quantity >= 2) {
@@ -18,7 +18,7 @@ const QuickViewModal = ({product}) => {
         }
     }
     const handleCart = () => {
-        addToCartDb(_id, quantity)
+        addToCartDb(product, quantity)
         setCart(true)
     }
     return (

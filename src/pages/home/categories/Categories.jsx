@@ -11,6 +11,7 @@ import jacket from '../../../assets/img/categories/jeket.jpg'
 import pen from '../../../assets/img/categories/pen.jpg'
 import shoes from '../../../assets/img/categories/shoes.jpg'
 import { FreeMode } from 'swiper';
+import { NavLink } from 'react-router-dom';
 
 const Categories = () => {
     const categories = [
@@ -23,7 +24,7 @@ const Categories = () => {
             img: women
         },
         {
-            name: 'T-Shirt',
+            name: 'TShirt',
             img: tshirt
         },
         {   
@@ -73,10 +74,10 @@ const Categories = () => {
       >
         {categories.map((cate, index) => <div key={index}>
             <SwiperSlide key={index}>
-                <div className='cursor-pointer categories-container'>
+                <NavLink to={`/category/${cate.name.toLocaleLowerCase()}`} className='cursor-pointer categories-container'>
                     <img className='rounded-full w-20 sm:w-28 mx-auto' src={cate.img} alt="" />
                     <h4 className='sm:text-lg text-sm text-center categories-name'>{cate.name}</h4>
-                </div>
+                </NavLink>
             </SwiperSlide>
         </div>)}
       </Swiper>

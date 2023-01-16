@@ -1,17 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
-import { getAddToCartDb } from '../../../utilities/AddToCart';
 
 const Search = ({setMobileMenu}) => {
     const [productCart, setProductCart] = useState(0);
     const {cart, setCart} = useContext(AuthContext)
     useEffect( () => {
-        const cartDb = getAddToCartDb()
-        let count = 0;
-        for(let key in cartDb) {
-            ++count;
-        }
+        const cartDb = JSON.parse(localStorage.getItem('enomio-cart'))
+        console.log();
+        let count = cartDb.length;
         setProductCart(count)
         setCart(false)
     }, [cart])
@@ -22,7 +19,7 @@ const Search = ({setMobileMenu}) => {
                 <i onClick={() => setMobileMenu(true)} className="fa-solid fa-bars-staggered sm:text-3xl text-2xl cursor-pointer"></i>  
             </div>
             <div className='flex-1'>
-                <h3 className='text-2xl sm:text-4xl font-bold secondary-text uppercase'>Enomio</h3>
+                <NavLink to='/'><h3 className='text-2xl sm:text-4xl font-bold secondary-text uppercase'>Enomio</h3></NavLink>
             </div>
             <div className='flex-1 hidden md:block'>
                 <div className='border-2 h-12 border-gray-300 rounded-sm w-100 flex justify-between items-center'>
