@@ -6,9 +6,11 @@ import Cart from "../pages/cart/Cart";
 import Categories from "../pages/categories/Categories";
 import Category from "../pages/categories/Category";
 import Home from "../pages/home/Home";
+import Login from "../pages/login/Login";
+import Register from "../pages/register/Register";
 import Shop from "../pages/shop/Shop";
 import ShopDetails from "../pages/shop/shop-details/ShopDetails";
-
+import WishList from "../pages/wishlist/WishList";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +33,7 @@ const router = createBrowserRouter([
         path: "/shop/:id",
         element: <ShopDetails />,
         loader: async ({ params }) =>
-          await fetch(`http://localhost:5000/shop/${params.id}`),
+          await fetch(`https://enomio-server.vercel.app/shop/${params.id}`),
       },
       {
         path: "/cart",
@@ -49,8 +51,20 @@ const router = createBrowserRouter([
         path: "/category/:id",
         element: <Category />,
         loader: async ({ params }) =>
-          await fetch(`http://localhost:5000/category/${params.id}`),
+          await fetch(`https://enomio-server.vercel.app/category/${params.id}`),
       },
+      {
+        path: "/login",
+        element: <Login />
+      },
+      {
+        path: "/register",
+        element: <Register />
+      },
+      {
+        path: "/wishlist",
+        element: <WishList />
+      }
     ],
   },
 ]);

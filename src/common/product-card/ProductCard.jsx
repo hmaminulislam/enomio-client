@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
-import { addToCartDb } from '../../utilities/AddToCart';
+import { addToCartDb, addWishlistDb } from '../../utilities/AddToCart';
 import QuickViewModal from '../quick-view-modal/QuickViewModal';
 import './product-card.css';
 
@@ -13,6 +13,9 @@ const ProductCard = ({products}) => {
         setCart(true)
         addToCartDb(product, 1)
     }
+    const handleWishList = (product) => {
+        addWishlistDb(product)
+    }
     return (
         <>
             {
@@ -21,7 +24,7 @@ const ProductCard = ({products}) => {
                     <div className='h-64 product-img'>
                         <Link to={`/shop/${pro._id}`}><img className='h-full mx-auto' src={pro.img} alt="" /></Link>
                         <div className='product-icon-container'>
-                            <i className="fa-regular fa-heart product-icon block mb-2 p-3 rounded-full hover:bg-sky-500 hover:text-white cursor-pointer"></i>
+                            <i onClick={() => handleWishList(pro)} className="fa-regular fa-heart product-icon block mb-2 p-3 rounded-full hover:bg-sky-500 hover:text-white cursor-pointer"></i>
                             <i onClick={() => handleAddToCart(pro)} className="fa-solid fa-bag-shopping product-icon block p-3 rounded-full hover:bg-sky-500 hover:text-white cursor-pointer"></i>
                         </div>
                         <label onClick={() => setProduct(pro)} htmlFor="QuickViewModal" className='quick-btn'>Quick view</label>

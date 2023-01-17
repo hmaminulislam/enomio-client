@@ -5,7 +5,7 @@ const BestSelling = () => {
     const [products, setProducts] = useState([])
     useState( () => {
         const getProduct = async () => {
-            const res = await fetch('http://localhost:5000/products')
+            const res = await fetch('https://enomio-server.vercel.app/products')
             const data = await res.json()
             setProducts(data.slice(0, 8))
         }

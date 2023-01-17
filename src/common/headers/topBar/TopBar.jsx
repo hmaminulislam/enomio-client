@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 const TopBar = () => {
+    const {user, logOut} = useContext(AuthContext)
+    //logOut Hanle
+  const logOutHandle = () => {
+    logOut()
+      .then((result) => {})
+      .catch((error) => console.log(error));
+  };
     return (
         <>
         <div className='py-3 secondary-bg hidden md:block'>
@@ -16,12 +25,16 @@ const TopBar = () => {
                         <i className="fa-solid text-gray-300 fa-circle-info mr-1"></i>
                         <h4 className='text-xs text-white'>Need help</h4>
                     </div>
-                    <div className='flex items-center'>
-                        <i className="fa-solid text-gray-300 fa-user mr-1"></i>
-                        <h4 className='text-xs text-white'>Sign in</h4>
-                        <span className='text-white px-1'>/</span>
-                        <h4 className='text-xs text-white'>Register</h4>
-                    </div>
+                    {
+                        user ? <button onClick={logOutHandle} className='btn btn-xs text-xs bg-red-500'>Log out</button> : <>
+                            <div className='flex items-center'>
+                                <i className="fa-solid text-gray-300 fa-user mr-1"></i>
+                                <Link to="/login"><h4 className='text-xs text-white'>Login</h4></Link>
+                                <span className='text-white px-1'>/</span>
+                                <Link to="/register"><h4 className='text-xs text-white'>Register</h4></Link>
+                            </div>
+                        </>
+                    }
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
-import { addToCartDb } from '../../utilities/AddToCart';
+import { addToCartDb, addWishlistDb } from '../../utilities/AddToCart';
 import './quick-view-modal.css'
 
 const QuickViewModal = ({product}) => {
@@ -20,6 +20,9 @@ const QuickViewModal = ({product}) => {
     const handleCart = () => {
         addToCartDb(product, quantity)
         setCart(true)
+    }
+    const handleWishList = () => {
+        addWishlistDb(product)
     }
     return (
         <>
@@ -64,7 +67,7 @@ const QuickViewModal = ({product}) => {
                             <span className='text-white text-sm sm:text-base'>Add to Cart</span>
                         </button>
                     </div>
-                    <button className='flex items-center mt-3'>
+                    <button onClick={handleWishList} className='flex items-center mt-3'>
                         <i className="fa-regular fa-heart sm:text-xl text-base mr-2"></i>
                         <span className='text-sm sm:text-base'>Add to Wishlist</span>
                     </button>

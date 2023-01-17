@@ -10,17 +10,17 @@ import BestSelling from './best-selling/BestSelling';
 const Home = () => {
     const [modalOpen, setModalOpen] = useState(false);
 
-    window.onload = function() {
-        setTimeout(function(){
-            setModalOpen(true)
-        }, 2000)
-    }
-    if(modalOpen) {
-        document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
-    }
-    else if (!modalOpen) {
-        document.body.style.backgroundColor = "rgba(0, 0, 0, 0)";
-    }
+    // window.onload = function() {
+    //     setTimeout(function(){
+    //         setModalOpen(true)
+    //     }, 2000)
+    // }
+    // if(modalOpen) {
+    //     document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+    // }
+    // else if (!modalOpen) {
+    //     document.body.style.backgroundColor = "rgba(0, 0, 0, 0)";
+    // }
     return (
         <>
         {modalOpen? <OfferModal setModalOpen={setModalOpen} /> : ''}
