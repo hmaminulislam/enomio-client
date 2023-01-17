@@ -8,6 +8,7 @@ const Cart = () => {
     const [products, setProducts] = useState([])
     const [refresh, setRefresh] = useState(false);
     const {setCart} = useContext(AuthContext)
+    const [total, setTotal] = useState(0)
 
     useEffect( () => {
         const getProducts = JSON.parse(localStorage.getItem("enomio-cart"))
@@ -21,6 +22,7 @@ const Cart = () => {
     const handleplusQuantity = (product) => {
         addToCartDb(product, 1)
         setRefresh(!refresh)
+        setTotal(0)
     }
     const handleMinusQuantity = (product) => {
         if(product.quantity < 2) {
@@ -28,12 +30,24 @@ const Cart = () => {
         }
         addToCartDb(product, - 1)
         setRefresh(!refresh)
+        setTotal(0)
     }
 
     const handleRemoveCart = (id) => {
         removeAddToCartDb(id)
         setRefresh(!refresh)
         setCart(true)
+        setTotal(0)
+    }
+    const handleCoupon = (e) => {
+        e.preventDefault()
+        const form = e.target;
+        const coupon = form.coupon.value.toLowerCase();
+        if(coupon === 'super2023') {
+            const blance = allSubTotal * 0.80
+            setTotal(blance.toFixed(2))
+            form.reset()
+        }
     }
     return (
             <>
@@ -116,25 +130,18 @@ const Cart = () => {
                                     <h4 className='font-semibold text-sm'>Subtotal</h4>
                                     <h4 className='text-sm'>${allSubTotal}</h4>
                                 </div>
-                                <h4 className='font-semibold text-sm mt-4'>Shipping</h4>
-                                <div className='flex items-center mb-2 mt-3'>
-                                    <input  type="radio" id='local' name="radio-2" className="radio checked:bg-blue-500 radio-sm mr-3" checked />
-                                    <label className='text-sm text-gray-500' htmlFor="local">Local pickup</label>
-                                </div>
-                                <div className='flex items-center'>
-                                    <input type="radio" name="radio-2" id='flat' className="radio checked:bg-blue-500 radio-sm mr-3" />
-                                    <label className='text-sm text-gray-500' htmlFor="flat">Flat rate</label>
-                                </div>
-                                <div className='my-5'>
-                                    <input className='outline-none w-full text-sm border border-gray-200 px-3 py-2' type="text" placeholder='Coupon Code' />
+                                <h4 className='font-semibold text-sm mt-4'>Coupon Code</h4>
+                                <p className='uppercase text-sm text-gray-500 mt-1'>Super2023</p>
+                                <form onSubmit={(e) => handleCoupon(e)} className='my-5'>
+                                    <input className='outline-none w-full text-sm border border-gray-200 px-3 py-2' name='coupon' type="text" placeholder='Coupon Code' />
                                     <button className='bg-sky-500 py-2 px-5 hover:bg-sky-600 mt-3 text-xs text-white rounded-full'>Apply Coupon</button>
-                                </div>
+                                </form>
                                 <hr />
                                 <div className='flex items-center justify-between mt-4'>
                                     <h4 className='font-semibold'>Total</h4>
-                                    <h4 className='text-gray-500 font-semibold'>${allSubTotal}</h4>
+                                    <h4 className='text-gray-500 font-semibold'>${total > 0 ? total : allSubTotal}</h4>
                                 </div>
-                                <button className='w-full bg-slate-800 hover:bg-gray-700 py-3 text-white text-sm font-semibold lg:mt-5 mt-10'>PROCEED TO CHECKOUT</button>
+                                <Link to="/checkout" state={`${total > 0 ? total : allSubTotal}`}><button className='w-full bg-slate-800 hover:bg-gray-700 py-3 text-white text-sm font-semibold lg:mt-5 mt-10'>PROCEED TO CHECKOUT</button></Link>
                             </div>
                         </div>
                     </div>

@@ -5,6 +5,7 @@ import Blog from "../pages/blog/Blog";
 import Cart from "../pages/cart/Cart";
 import Categories from "../pages/categories/Categories";
 import Category from "../pages/categories/Category";
+import Checkout from "../pages/checkout/Checkout";
 import Home from "../pages/home/Home";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       {
         path: "/wishlist",
         element: <WishList />
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />
       }
     ],
   },

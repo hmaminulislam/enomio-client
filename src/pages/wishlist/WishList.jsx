@@ -91,8 +91,8 @@ const WishList = () => {
                 </> : 
                 <>
                     <div className='px-5 md:px-10 lg:px-14 my-20 text-center'>
-                        <h4 className='text-lg text-gray-600 font-semibold text-center mb-2'>Your cart is currently empty.</h4>
-                        <i class="fa-solid fa-bag-shopping text-9xl text-gray-400 text-center w-full"></i>
+                        <h4 className='text-lg text-gray-600 font-semibold text-center mb-2'>Your wishlist is currently empty.</h4>
+                        <i class="fa-regular fa-heart text-9xl text-gray-400 text-center w-full"></i>
                         <Link to="/shop"><button className='text-sm bg-zinc-800 py-3 px-5 text-gray-100 mt-5'>RETURN TO SHOP</button></Link>
                     </div>
                 </>

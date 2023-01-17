@@ -1,10 +1,13 @@
 import React from 'react';
-import img from '../../assets/img/comming-soon/commin-soon.png'
+import { useLoaderData } from 'react-router-dom';
+import Shop from '../shop/Shop';
 
 const Category = () => {
+    const products = useLoaderData()
+    console.log(products);
     return (
         <div className='my-20'>
-            <img className='md:w-[50%] w-[70%] mx-auto' src={img} alt="" />
+            <Shop CategoryProducts={products} />
         </div>
     );
 };
