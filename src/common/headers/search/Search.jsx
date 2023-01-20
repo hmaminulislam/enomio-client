@@ -42,7 +42,7 @@ const Search = ({setMobileMenu}) => {
                 </Link>
                 <Link to={'/cart'} className="relative mr-4 sm:mr-8 md:mr-0">
                     <i className="fa-solid fa-cart-shopping sm:text-3xl text-2xl"></i>
-                    <span className='bg-red-400 w-5 h-5 rounded-full text-center inline-block absolute top-[-7px] right-[-7px] text-zinc-50 text-xs'>{productCart}</span>
+                    <span className='bg-red-400 w-5 h-5 rounded-full text-center inline-block absolute top-[-7px] right-[-7px] text-zinc-50 text-xs'>{productCart? productCart : '0'}</span>
                 </Link>
                 <div className='block md:hidden'>
                     <i className="fa-regular fa-user sm:text-3xl text-2xl"></i>

@@ -7,7 +7,7 @@ const BestSelling = () => {
         const getProduct = async () => {
             const res = await fetch('https://enomio-server.vercel.app/products')
             const data = await res.json()
-            setProducts(data.slice(0, 8))
+            setProducts(data.products.slice(0, 8))
         }
         getProduct()
     }, [])

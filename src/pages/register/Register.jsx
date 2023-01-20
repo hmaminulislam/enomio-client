@@ -20,7 +20,7 @@ const Register = () => {
       navigate('/')
       form.reset()
       //create user database
-            fetch("http://localhost:5000/users", {
+            fetch("https://enomio-server.vercel.app/users", {
               method: "PUT",
               headers: {
                 "content-type": "application/json",

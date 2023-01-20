@@ -39,7 +39,7 @@ const Login = () => {
           email,
         };
         //user create or update database
-        fetch("http://localhost:5000/users", {
+        fetch("https://enomio-server.vercel.app/users", {
           method: "PUT",
           headers: {
             "content-type": "application/json",

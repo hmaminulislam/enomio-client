@@ -9,7 +9,7 @@ const Shop = ({CategoryProducts}) => {
     const [size, setSize] = useState(12)
 
     useEffect(() => {
-        const url = `http://localhost:5000/products?page=${page}&size=${size}`;
+        const url = `https://enomio-server.vercel.app/products?page=${page}&size=${size}`;
         console.log(page, size);
         fetch(url)
             .then(res => res.json())
