@@ -30,8 +30,12 @@ const addToCartDb = (product, quantity) => {
 const removeAddToCartDb = (id) => {
   const getCartDb = JSON.parse(localStorage.getItem("enomio-cart"));
   const shoppingCart = getCartDb.filter((pro) => pro._id !== id);
-
-  localStorage.setItem("enomio-cart", JSON.stringify(shoppingCart));
+  if(shoppingCart.length === 0) {
+    localStorage.removeItem("enomio-cart")
+  }
+  else {
+    localStorage.setItem("enomio-cart", JSON.stringify(shoppingCart));
+  }
   return shoppingCart;
 };
 
@@ -66,8 +70,14 @@ const addWishlistDb = (product) => {
 const removeWishListDb = (id) => {
   const getWishlistDb = JSON.parse(localStorage.getItem("enomio-wishlist"));
   const wishList = getWishlistDb.filter((pro) => pro._id !== id);
-  toast.error("Remove wishlist")
-  localStorage.setItem("enomio-wishlist", JSON.stringify(wishList));
+  if(wishList.length === 0) {
+    localStorage.removeItem("enomio-wishlist")
+    toast.error("Remove wishlist");
+  }
+  else {
+    toast.error("Remove wishlist");
+    localStorage.setItem("enomio-wishlist", JSON.stringify(wishList));
+  }
   return wishList;
 };
 

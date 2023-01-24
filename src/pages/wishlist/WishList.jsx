@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { addToCartDb, removeWishListDb } from '../../utilities/AddToCart';
 
 const WishList = () => {
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState(0)
     const [refresh, setRefresh] = useState(false);
 
     useEffect( () => {
@@ -22,7 +22,7 @@ const WishList = () => {
         <div>
             <>
             {
-                products.length > 0? 
+                products? 
                 <>
                     <div className='px-5 md:px-10 lg:px-14 mb-20'>
                         <h4 className='text-center text-2xl font-semibold my-10'>Wishlist</h4>
@@ -92,7 +92,7 @@ const WishList = () => {
                 <>
                     <div className='px-5 md:px-10 lg:px-14 my-20 text-center'>
                         <h4 className='text-lg text-gray-600 font-semibold text-center mb-2'>Your wishlist is currently empty.</h4>
-                        <i class="fa-regular fa-heart text-9xl text-gray-400 text-center w-full"></i>
+                        <i className="fa-regular fa-heart text-9xl text-gray-400 text-center w-full"></i>
                         <Link to="/shop"><button className='text-sm bg-zinc-800 py-3 px-5 text-gray-100 mt-5'>RETURN TO SHOP</button></Link>
                     </div>
                 </>

@@ -27,7 +27,7 @@ const DescriptionReview = ({product}) => {
                     <p className='text-sm mt-3'>{featureText}</p>
                     <ul className='mt-4'>
                         {
-                            featureList.map(li => <li className='text-sm mb-2'><i className="fa-solid fa-check mr-2"></i>{li.list}</li>)
+                            featureList.map((li, index) => <li key={index} className='text-sm mb-2'><i className="fa-solid fa-check mr-2"></i>{li.list}</li>)
                         }
                     </ul>
                 </div>

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import ProductCard from '../../../common/product-card/ProductCard';
+import Spinner from '../../../common/spinner/Spinner';
 
 const BestSelling = () => {
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState(null)
     useState( () => {
         const getProduct = async () => {
             const res = await fetch('https://enomio-server.vercel.app/products')
@@ -16,9 +17,15 @@ const BestSelling = () => {
             <div>
                 <h3 className='mb-3 text-xl'>Best Selling</h3>
             </div>
-            <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10'>
-                <ProductCard products={products} />
-            </div>
+            {
+                products ? <>
+                    <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10'>
+                    <ProductCard products={products} />
+                    </div>
+                </>
+                : 
+                <Spinner height={'h-44'} />
+            }
         </div>
     );
 };

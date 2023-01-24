@@ -23,11 +23,11 @@ const CheckoutCart = () => {
             </div>
             <h4 className='font-semibold text-sm mt-4'>Shipping</h4>
             <div className='flex items-center mt-2 mb-2'>
-                <input onClick={handleFreeShip} type="radio" name="radio-2" id='free' className="radio checked:bg-blue-500 radio-sm mr-3" />
+                <input onClick={handleFreeShip} type="radio" checked name="radio-2" id='free' className="radio checked:bg-blue-500 radio-sm mr-3" />
                 <label className='text-sm text-gray-500' htmlFor="free">Free shipping</label>
             </div>
             <div className='flex items-center mb-2 mt-3'>
-                <input onClick={handleLocalPickup} type="radio" id='local' name="radio-2" className="radio checked:bg-blue-500 radio-sm mr-3" checked />
+                <input onClick={handleLocalPickup} type="radio" id='local' name="radio-2" className="radio checked:bg-blue-500 radio-sm mr-3" />
                 <label className='text-sm text-gray-500' htmlFor="local">Local pickup</label>
             </div>
             <div className='flex items-center mb-4'>
@@ -38,7 +38,7 @@ const CheckoutCart = () => {
             <div className='mt-3'>
                 <h3 className='font-semibold text-sm'>Payment Method</h3>
                 <div className='flex items-center mt-2 mb-4'>
-                    <input type="radio" name="payment" id='cash' className="radio checked:bg-blue-500 radio-sm mr-3" />
+                    <input type="radio" name="payment" id='cash' checked className="radio checked:bg-blue-500 radio-sm mr-3" />
                     <label className='text-sm text-gray-500' htmlFor="cash">Cash on Delivery</label>
                 </div>
             </div>

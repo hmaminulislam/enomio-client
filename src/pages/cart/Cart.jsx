@@ -5,7 +5,7 @@ import { addToCartDb, removeAddToCartDb } from '../../utilities/AddToCart';
 import './cart.css'
 
 const Cart = () => {
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState(0)
     const [refresh, setRefresh] = useState(false);
     const {setCart} = useContext(AuthContext)
     const [total, setTotal] = useState(0)
@@ -16,8 +16,10 @@ const Cart = () => {
     }, [refresh]);
 
     let allSubTotal = 0;
-    for(const element of products) {
-        allSubTotal += (element.price * element.quantity)
+    if(products) {
+        for(const element of products) {
+        allSubTotal += (element?.price * element?.quantity)
+    }
     }
     const handleplusQuantity = (product) => {
         addToCartDb(product, 1)
@@ -50,9 +52,9 @@ const Cart = () => {
         }
     }
     return (
-            <>
+            <div>
             {
-                products.length > 0? 
+                products?
                 <>
                     <div className='px-5 md:px-10 lg:px-14 mb-20'>
                         <h4 className='text-center text-2xl font-semibold my-10'>Shopping Cart</h4>
@@ -71,7 +73,7 @@ const Cart = () => {
                                     <tbody>
                                         {/* row */}
                                     {
-                                        products.map(pro => <>
+                                        products?.map(pro => <>
                                             <tr className=''>
                                                 <td>
                                                 <div className="flex items-center">
@@ -106,7 +108,7 @@ const Cart = () => {
                             {/* small device */}
                             <div className='md:hidden block'>
                                 {
-                                    products.map(pro => <>
+                                    products?.map(pro => <>
                                         <div className='text-center relative border border-gray-200 mb-5 py-8'>
                                             <div className='w-24 h-24  bg-base-300 p-4 mx-auto'>
                                                 <img className='w-full h-full' src={pro.img} alt="" />
@@ -149,12 +151,12 @@ const Cart = () => {
                 <>
                     <div className='px-5 md:px-10 lg:px-14 my-20 text-center'>
                         <h4 className='text-lg text-gray-600 font-semibold text-center mb-2'>Your cart is currently empty.</h4>
-                        <i class="fa-solid fa-bag-shopping text-9xl text-gray-400 text-center w-full"></i>
+                        <i className="fa-solid fa-bag-shopping text-9xl text-gray-400 text-center w-full"></i>
                         <Link to="/shop"><button className='text-sm bg-zinc-800 py-3 px-5 text-gray-100 mt-5'>RETURN TO SHOP</button></Link>
                     </div>
                 </>
             }
-            </>
+            </div>
         
     );
 };
