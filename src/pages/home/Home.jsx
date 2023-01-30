@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import OfferModal from '../../common/modal/OfferModal';
+import React from 'react';
 import Categories from './categories/Categories';
 import Hero from './hero/Hero';
 import ServicesInfo from './services-info/ServicesInfo';
@@ -8,23 +7,10 @@ import './Home.css'
 import BestSelling from './best-selling/BestSelling';
 
 const Home = () => {
-    const [modalOpen, setModalOpen] = useState(false);
 
-    // window.onload = function() {
-    //     setTimeout(function(){
-    //         setModalOpen(true)
-    //     }, 2000)
-    // }
-    // if(modalOpen) {
-    //     document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
-    // }
-    // else if (!modalOpen) {
-    //     document.body.style.backgroundColor = "rgba(0, 0, 0, 0)";
-    // }
     return (
         <>
-        {modalOpen? <OfferModal setModalOpen={setModalOpen} /> : ''}
-        <div onClick={() => setModalOpen(false)} className='md:px-10 lg:px-14'>
+        <div className='md:px-10 lg:px-14'>
             <Hero />
         </div>
         <div className='px-5 md:px-10 lg:px-14'>

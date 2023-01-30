@@ -1,10 +1,6 @@
-import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import React from 'react';
 
-const CheckoutCart = () => {
-    const [totalPrice, setTotalPrice] = useState()
-    const total = useLocation()
-
+const CheckoutCart = ({totalPrice, setTotalPrice, total}) => {
     const handleFreeShip = () => {
         setTotalPrice(total?.state)
     }
@@ -23,7 +19,7 @@ const CheckoutCart = () => {
             </div>
             <h4 className='font-semibold text-sm mt-4'>Shipping</h4>
             <div className='flex items-center mt-2 mb-2'>
-                <input onClick={handleFreeShip} type="radio" checked name="radio-2" id='free' className="radio checked:bg-blue-500 radio-sm mr-3" />
+                <input onClick={handleFreeShip} type="radio" defaultChecked name="radio-2" id='free' className="radio checked:bg-blue-500 radio-sm mr-3" />
                 <label className='text-sm text-gray-500' htmlFor="free">Free shipping</label>
             </div>
             <div className='flex items-center mb-2 mt-3'>
@@ -38,7 +34,11 @@ const CheckoutCart = () => {
             <div className='mt-3'>
                 <h3 className='font-semibold text-sm'>Payment Method</h3>
                 <div className='flex items-center mt-2 mb-4'>
-                    <input type="radio" name="payment" id='cash' checked className="radio checked:bg-blue-500 radio-sm mr-3" />
+                    <input type="radio" name="payment" id='sslcom' defaultChecked className="radio checked:bg-green-500 radio-sm mr-3" />
+                    <label className='text-sm text-gray-500' htmlFor="sslcom">SSLCOMMERCE</label>
+                </div>
+                <div className='flex items-center mt-2 mb-4'>
+                    <input type="radio" name="payment" id='cash' className="radio checked:bg-green-500 radio-sm mr-3" />
                     <label className='text-sm text-gray-500' htmlFor="cash">Cash on Delivery</label>
                 </div>
             </div>
@@ -46,7 +46,7 @@ const CheckoutCart = () => {
                 <h4 className='font-semibold'>Total</h4>
                 <h4 className='text-gray-500 font-semibold'>${totalPrice? totalPrice: total.state}</h4>
             </div>
-            <button className='w-full bg-slate-800 hover:bg-gray-700 py-3 text-white text-sm font-semibold lg:mt-5 mt-10'>Place Order</button>
+            <button type='submit' className='w-full bg-slate-800 hover:bg-gray-700 py-3 text-white text-sm font-semibold lg:mt-5 mt-10'>Place Order</button>
         </div>
     );
 };

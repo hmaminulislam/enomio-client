@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider';
 import { addToCartDb, removeWishListDb } from '../../utilities/AddToCart';
 
 const WishList = () => {
+    const {setCart} = useContext(AuthContext)
     const [products, setProducts] = useState(0)
     const [refresh, setRefresh] = useState(false);
 
@@ -16,6 +19,7 @@ const WishList = () => {
         setRefresh(!refresh)
     }
     const handleCart = (product) => {
+        setCart(true)
         addToCartDb(product, 1)
     }
     return (

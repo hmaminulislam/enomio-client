@@ -72,10 +72,8 @@ const removeWishListDb = (id) => {
   const wishList = getWishlistDb.filter((pro) => pro._id !== id);
   if(wishList.length === 0) {
     localStorage.removeItem("enomio-wishlist")
-    toast.error("Remove wishlist");
   }
   else {
-    toast.error("Remove wishlist");
     localStorage.setItem("enomio-wishlist", JSON.stringify(wishList));
   }
   return wishList;
