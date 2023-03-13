@@ -37,7 +37,7 @@
     height: 2px;
     left: 0;
     bottom: -4px;
-    background-color: #32a8e8;
+    background-color: #10b981;
     transition: ease-in 0.3s;
 }
 .btn-container:hover .btn-trending::after {
@@ -46,5 +46,5 @@
 
 /* Categories */
 .categories-container:hover .categories-name {
-    color: #0f85c5
+    color: #10b981;
 }

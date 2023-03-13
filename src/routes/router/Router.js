@@ -2,10 +2,14 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import About from "../../pages/about/About";
 import Blog from "../../pages/blog/Blog";
+import BlogDetails from "../../pages/blog/BlogDetails";
 import Cart from "../../pages/cart/Cart";
 import Categories from "../../pages/categories/Categories";
 import Category from "../../pages/categories/Category";
 import Checkout from "../../pages/checkout/Checkout";
+import PaymentFail from "../../pages/checkout/PaymentFail";
+import PaymentSuccess from "../../pages/checkout/PaymentSuccess";
+import Contact from "../../pages/contact/Contact";
 import Home from "../../pages/home/Home";
 import Login from "../../pages/login/Login";
 import Register from "../../pages/register/Register";
@@ -46,6 +50,10 @@ const router = createBrowserRouter([
         element: <Blog />,
       },
       {
+        path: "/blog/:id",
+        element: <BlogDetails />,
+      },
+      {
         path: "/categories",
         element: <Categories />,
       },
@@ -68,10 +76,30 @@ const router = createBrowserRouter([
         element: <WishList />,
       },
       {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
         path: "/checkout",
         element: (
           <PrivateRoute>
             <Checkout />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/payment/success",
+        element: (
+          <PrivateRoute>
+            <PaymentSuccess />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/payment/fail",
+        element: (
+          <PrivateRoute>
+            <PaymentFail />
           </PrivateRoute>
         ),
       },

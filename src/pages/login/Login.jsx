@@ -22,7 +22,7 @@ const Login = () => {
     })
     .catch(error => {
       console.log(error);
-      toast.error('Login not successful')
+      toast.error("Somthing wrong!");
     })
   };
 
@@ -55,7 +55,7 @@ const Login = () => {
           });
       })
       .catch((error) => {
-        toast.error("Login successful");
+        toast.error("Somthing wrong!");
         console.log(error);
       });
   };

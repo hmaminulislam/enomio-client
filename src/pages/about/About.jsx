@@ -1,11 +1,15 @@
 import React from 'react';
-import img from '../../assets/img/comming-soon/commin-soon.png'
+import AboutFeedback from './AboutFeedback';
+import AboutHero from './AboutHero';
+import AboutService from './AboutService';
 
 const About = () => {
     return (
-        <div className='my-20'>
-            <img className='md:w-[50%] w-[70%] mx-auto' src={img} alt="" />
-        </div>
+      <div className="mt-10 mb-20 px-5 md:px-10 lg:px-14">
+        <AboutHero />
+        <AboutFeedback />
+        <AboutService />
+      </div>
     );
 };
 

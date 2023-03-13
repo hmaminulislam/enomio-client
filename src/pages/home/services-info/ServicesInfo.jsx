@@ -27,7 +27,7 @@ const ServicesInfo = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-10'>
             {services.map((ser, index) => <div key={index}>
                 <div className='flex items-center py-8 px-4 service-box'>
-                    <i className={`${ser.icon} text-4xl text-sky-600 mr-3`}></i>
+                    <i className={`${ser.icon} text-4xl text-primary mr-3`}></i>
                     <div>
                         <h3 className='text-lg text-black'>{ser.title}</h3>
                         <p className='text-sm text-gray-500'>{ser.body}</p>

@@ -4,7 +4,6 @@ import Shop from '../shop/Shop';
 
 const Category = () => {
     const products = useLoaderData()
-    console.log(products);
     return (
         <div className='my-20'>
             <Shop CategoryProducts={products} />

@@ -5,7 +5,7 @@ const Footer = () => {
         <div className='px-5 md:px-10 lg:px-14 bg-zinc-800 pt-20 pb-5'>
             <div className='grid grid-cols-2 md:grid-cols-4 gap-y-20 gap-x-10'>
                 <div className=''>
-                    <h2 className='text-3xl font-semibold text-sky-500'>Enomio</h2>
+                    <h2 className='text-3xl font-semibold text-primary'>Enomio</h2>
                     <p className='text-xs text-gray-400 mt-4'>Fringilla urna porttitor rhoncus dolor purus luctus venenatis lectus magna fringilla diam maecenas ultricies mi eget mauris.</p>
                     <p className='text-xs text-gray-400 mt-2'>contact@example.com</p>
                     <p className='text-xs text-gray-400 mt-2'>+880140000000</p>

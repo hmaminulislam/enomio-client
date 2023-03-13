@@ -40,7 +40,7 @@ const Categories = () => {
             img: jacket
         },
         {
-            name: 'Pen',
+            name: 'Pant',
             img: pen
         },
         {

@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import ProductCard from '../../common/product-card/ProductCard';
 import Spinner from '../../common/spinner/Spinner';
 import './shop.css'
 
 const Shop = ({CategoryProducts}) => {
+    const location = useLocation();
+    const pathname = location.pathname;
+    console.log(location);
     const [products, setProducts] = useState(null)
     const [count, setCount] = useState(0)
     const [page, setPage] = useState(0);
@@ -24,9 +28,11 @@ const Shop = ({CategoryProducts}) => {
         <>
             {
                 products? <>
-                <div className='shop-banner h-64 flex items-center mt-10'>
+                {
+                    !pathname.includes("/categories") && <div className='shop-banner h-64 flex items-center mt-10'>
                     <h2 className='text-4xl font-semibold sm:pl-52 pl-5'>Shop</h2>
                 </div>
+                }
                 <div>
                     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-20 px-5 md:px-10 lg:px-14 my-20'>
                         <ProductCard products={CategoryProducts? CategoryProducts: products} />
