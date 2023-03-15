@@ -1,10 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 const Search = ({setMobileMenu}) => {
+  const [open, setOpen] = useState(false)
     const [productCart, setProductCart] = useState(0);
-    const {cart, setCart} = useContext(AuthContext)
+    const {cart, setCart, user, logOut} = useContext(AuthContext)
     useEffect( () => {
         const cartDb = JSON.parse(localStorage.getItem('enomio-cart'))
         console.log();
@@ -13,6 +14,22 @@ const Search = ({setMobileMenu}) => {
         setCart(false)
     }, [setCart, cart])
 
+    //logOut Hanle
+  const logOutHandle = () => {
+    logOut()
+      .then((result) => {})
+      .catch((error) => console.log(error));
+  };
+  const userIcon = useRef(null)
+  useEffect(()=> {
+    document.addEventListener('click', handleOustSide, true)
+  }, [])
+
+  const handleOustSide = (e) => {
+    if(!userIcon.current.contains(e.target)) {
+      setOpen(false)
+    }
+  }
     return (
       <div className="flex justify-between pt-5 px-5 md:px-10 lg:px-14">
         <div className="md:hidden mr-5">
@@ -60,10 +77,22 @@ const Search = ({setMobileMenu}) => {
               {productCart ? productCart : "0"}
             </span>
           </Link>
-          <div className="block md:hidden">
-            <Link to="/login">
-              <i className="fa-regular fa-user sm:text-3xl text-2xl"></i>
-            </Link>
+          <div className="block md:hidden relative">
+              <i ref={userIcon} onClick={() => setOpen(!open)} className="fa-regular cursor-pointer fa-user sm:text-3xl text-2xl user-icon-mb"></i>
+              <div className={`my-account-sub-mb ${open ? 'block' : 'hidden'}`}>
+                  {
+                      user ? 
+                  <>
+                      <Link to="/"><h4 className='text-xs'>My Account</h4></Link>
+                      <Link to="/"><h4 className='text-xs'>Orders</h4></Link>
+                      <button onClick={logOutHandle} className='btn btn-sm text-xs bg-red-500 block mt-4'>Log out</button>
+                  </>
+                  : <>
+                      <Link to="/login"><h4 className='text-xs'>Login</h4></Link>
+                      <Link to="/register"><h4 className='text-xs'>Register</h4></Link>
+                  </>
+                  }
+              </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -12,9 +13,9 @@ const Footer = () => {
                 </div>
                 <div>
                     <h3 className='text-white text-sm sm:text-base mb-3'>My Account</h3>
-                    <li className='list-none text-xs text-gray-400 mb-3'>Sign In</li>
-                    <li className='list-none text-xs text-gray-400 mb-3'>View Cart</li>
-                    <li className='list-none text-xs text-gray-400 mb-3'>My Wishlist</li>
+                    <Link to="/login"><li className='list-none text-xs text-gray-400 mb-3'>Sign In</li></Link>
+                    <Link to="/cart"><li className='list-none text-xs text-gray-400 mb-3'>View Cart</li></Link>
+                    <Link to="wishlist"><li className='list-none text-xs text-gray-400 mb-3'>My Wishlist</li></Link>
                     <li className='list-none text-xs text-gray-400 mb-3'>My Order</li>
                     <li className='list-none text-xs text-gray-400 mb-3'>Help</li>
                 </div>
@@ -32,7 +33,7 @@ const Footer = () => {
                     <li className='list-none text-xs text-gray-400 mb-3'>Returns</li>
                     <li className='list-none text-xs text-gray-400 mb-3'>Custom Service</li>
                     <li className='list-none text-xs text-gray-400 mb-3'>Terms & Condition</li>
-                    <li className='list-none text-xs text-gray-400 mb-3'>Contact</li>
+                    <Link to="/contact"><li className='list-none text-xs text-gray-400 mb-3'>Contact</li></Link>
                 </div>    
             </div>
             <hr className='mt-10' />

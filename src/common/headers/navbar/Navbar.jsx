@@ -16,23 +16,23 @@ const Navbar = ({mobileMenu, setMobileMenu}) => {
           <div className="pt-5 flex justify-between">
             <div>
               <ul className="flex">
-                <NavLink to="/">
-                  <li className="menu-link hover:text-primary mr-7">Home</li>
+                <NavLink to="/" className="mr-7">
+                  <li className="menu-link hover:text-primary">Home</li>
                 </NavLink>
-                <NavLink to="/categories">
-                  <li className="menu-link hover:text-primary mr-7">Categories</li>
+                <NavLink to="/categories" className="mr-7">
+                  <li className="menu-link hover:text-primary">Categories</li>
                 </NavLink>
-                <NavLink to="/shop">
-                  <li className="menu-link hover:text-primary mr-7">Shop</li>
+                <NavLink to="/shop" className="mr-7">
+                  <li className="menu-link hover:text-primary">Shop</li>
                 </NavLink>
-                <NavLink to="/blog">
-                  <li className="menu-link hover:text-primary mr-7">Blog</li>
+                <NavLink to="/blog" className="mr-7">
+                  <li className="menu-link hover:text-primary">Blog</li>
                 </NavLink>
-                <NavLink to="/about">
-                  <li className="menu-link hover:text-primary mr-7">About</li>
+                <NavLink to="/about" className="mr-7">
+                  <li className="menu-link hover:text-primary">About</li>
                 </NavLink>
-                <NavLink to="/contact">
-                  <li className="menu-link hover:text-primary mr-7">Contact</li>
+                <NavLink to="/contact" className="mr-7">
+                  <li className="menu-link hover:text-primary">Contact</li>
                 </NavLink>
               </ul>
             </div>
@@ -57,28 +57,28 @@ const Navbar = ({mobileMenu, setMobileMenu}) => {
               </h3>
             </NavLink>
             <div className="text-base-content">
-              <ul className="p-4">
-                <NavLink to="/">
-                  <li className="mb-3 text-white">Home</li>
+              <ul className="p-4 flex flex-col">
+                <NavLink className="text-white hover:text-primary" to="/">
+                  <li className="mb-3 menu-link inline-block">Home</li>
                 </NavLink>
-                <NavLink to="/categories">
-                  <li className="mb-3 text-white">Categories</li>
+                <NavLink className="text-white hover:text-primary" to="/categories">
+                  <li className="mb-3 menu-link inline-block">Categories</li>
                 </NavLink>
-                <NavLink to="/shop">
-                  <li className="mb-3 text-white">Shop</li>
+                <NavLink className="text-white hover:text-primary" to="/shop">
+                  <li className="mb-3 menu-link inline-block">Shop</li>
                 </NavLink>
-                <NavLink to="/blog">
-                  <li className="mb-3 text-white">Blog</li>
+                <NavLink className="text-white hover:text-primary" to="/blog">
+                  <li className="mb-3 menu-link inline-block">Blog</li>
                 </NavLink>
-                <NavLink to="/about">
-                  <li className="mb-3 text-white">About</li>
+                <NavLink className="text-white hover:text-primary" to="/about">
+                  <li className="mb-3 menu-link inline-block">About</li>
                 </NavLink>
-                <NavLink to="/contact">
-                  <li className="mb-3 text-white">Contact</li>
+                <NavLink className="text-white hover:text-primary" to="/contact">
+                  <li className="mb-3 menu-link inline-block">Contact</li>
                 </NavLink>
               </ul>
               {user && (
-                <div className="absolute bottom-5">
+                <div className="logout-btn-mb">
                   <button
                     onClick={logOutHandle}
                     className="bg-red-500 py-1 px-3 ml-3 rounded-sm text-white text-xs"
