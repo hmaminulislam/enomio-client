@@ -12,7 +12,7 @@ const Navbar = ({mobileMenu, setMobileMenu}) => {
     };
     return (
       <>
-        <div className="px-5 md:px-10 lg:px-14 hidden md:block mt-5">
+        <div className="px-5 md:px-10 lg:px-14 hidden md:block mt-5 max-w-[1400px] mx-auto">
           <div className="pt-5 flex justify-between">
             <div>
               <ul className="flex">

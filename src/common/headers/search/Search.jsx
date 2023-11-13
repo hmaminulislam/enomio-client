@@ -31,7 +31,7 @@ const Search = ({setMobileMenu}) => {
     }
   }
     return (
-      <div className="flex justify-between pt-5 px-5 md:px-10 lg:px-14">
+      <div className="flex justify-between pt-5 px-5 md:px-10 lg:px-14 max-w-[1400px] mx-auto">
         <div className="md:hidden mr-5">
           <i
             onClick={() => setMobileMenu(true)}
@@ -85,11 +85,15 @@ const Search = ({setMobileMenu}) => {
                   <>
                       <Link to="/"><h4 className='text-xs'>My Account</h4></Link>
                       <Link to="/"><h4 className='text-xs'>Orders</h4></Link>
+                      <Link to="/cart"><h4 className='text-xs'>Cart</h4></Link>
+                      <Link to="/wishlist"><h4 className='text-xs'>Wishlist</h4></Link>
                       <button onClick={logOutHandle} className='btn btn-sm text-xs bg-red-500 block mt-4'>Log out</button>
                   </>
                   : <>
                       <Link to="/login"><h4 className='text-xs'>Login</h4></Link>
                       <Link to="/register"><h4 className='text-xs'>Register</h4></Link>
+                      <Link to="/cart"><h4 className='text-xs'>Cart</h4></Link>
+                      <Link to="/wishlist"><h4 className='text-xs'>Wishlist</h4></Link>
                   </>
                   }
               </div>

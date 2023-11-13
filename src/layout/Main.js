@@ -5,11 +5,13 @@ import Headers from '../common/headers/Headers';
 
 const Main = () => {
     return (
-        <>
-            <Headers />
-            <Outlet />
-            <Footer />
-        </>
+      <>
+        <Headers />
+        <div className='max-w-[1400px] mx-auto'>
+          <Outlet />
+        </div>
+        <Footer />
+      </>
     );
 };
 

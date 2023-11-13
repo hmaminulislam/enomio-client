@@ -12,6 +12,7 @@ import PaymentSuccess from "../../pages/checkout/PaymentSuccess";
 import Contact from "../../pages/contact/Contact";
 import Home from "../../pages/home/Home";
 import Login from "../../pages/login/Login";
+import Orders from "../../pages/orders/Orders";
 import Register from "../../pages/register/Register";
 import Shop from "../../pages/shop/Shop";
 import ShopDetails from "../../pages/shop/shop-details/ShopDetails";
@@ -84,6 +85,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Checkout />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/orders",
+        element: (
+          <PrivateRoute>
+            <Orders />
           </PrivateRoute>
         ),
       },
