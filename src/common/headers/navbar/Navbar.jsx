@@ -12,33 +12,33 @@ const Navbar = ({mobileMenu, setMobileMenu}) => {
     };
     return (
       <>
-        <div className="px-5 md:px-10 lg:px-14 hidden md:block mt-5 max-w-[1400px] mx-auto">
+        <div className="px-5 md:px-10 lg:px-14 hidden md:block mt-1 max-w-[1400px] mx-auto">
           <div className="pt-5 flex justify-between">
             <div>
               <ul className="flex">
                 <NavLink to="/" className="mr-7">
-                  <li className="menu-link hover:text-primary">Home</li>
+                  <li className="menu-link text-black hover:text-primary">Home</li>
                 </NavLink>
                 <NavLink to="/categories" className="mr-7">
-                  <li className="menu-link hover:text-primary">Categories</li>
+                  <li className="menu-link text-black hover:text-primary">Categories</li>
                 </NavLink>
                 <NavLink to="/shop" className="mr-7">
-                  <li className="menu-link hover:text-primary">Shop</li>
+                  <li className="menu-link text-black hover:text-primary">Shop</li>
                 </NavLink>
                 <NavLink to="/blog" className="mr-7">
-                  <li className="menu-link hover:text-primary">Blog</li>
+                  <li className="menu-link text-black hover:text-primary">Blog</li>
                 </NavLink>
                 <NavLink to="/about" className="mr-7">
-                  <li className="menu-link hover:text-primary">About</li>
+                  <li className="menu-link text-black hover:text-primary">About</li>
                 </NavLink>
                 <NavLink to="/contact" className="mr-7">
-                  <li className="menu-link hover:text-primary">Contact</li>
+                  <li className="menu-link text-black hover:text-primary">Contact</li>
                 </NavLink>
               </ul>
             </div>
             <div className="flex items-center">
-              <i className="fa-solid fa-tag text-xl mr-2 text-gray-600"></i>
-              <h4 className="font-semibold">Special Offers</h4>
+              <i className="fa-solid fa-tag text-xl mr-2 text-black"></i>
+              <h4 className="text-black text-[18px]">Special Offers</h4>
             </div>
           </div>
         </div>

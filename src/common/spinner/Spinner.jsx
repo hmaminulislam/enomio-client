@@ -3,6 +3,7 @@ import React from 'react';
 const Spinner = ({height}) => {
     return (
         <div className={`flex justify-center items-center ${height}`}>
+            <p className='mr-2 font-[600]'>Loading...</p>
             <div className="flex space-x-2">
                 <div aria-label="Loading..." role="status">
                     <svg className="h-6 w-6 animate-spin stroke-indigo-500" viewBox="0 0 256 256">

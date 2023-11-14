@@ -23,7 +23,7 @@ const WishList = () => {
         addToCartDb(product, 1)
     }
     return (
-        <div>
+        <div className='max-w-[1400px] mx-auto'>
             <>
             {
                 products? 

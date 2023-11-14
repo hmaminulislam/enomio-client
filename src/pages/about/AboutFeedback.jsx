@@ -71,10 +71,10 @@ const AboutFeedback = () => {
         modules={[FreeMode]}
         className="mySwiper"
       >
-        <div className="">
+        <div className="py-4">
           {feedbacks.map((feedback) => (
             <SwiperSlide>
-              <>
+              <div className="testimonial-card">
                 <div>
                   <i className="fa-solid fa-star text-orange-300 mr-1"></i>
                   <i className="fa-solid fa-star text-orange-300 mr-1"></i>
@@ -95,7 +95,7 @@ const AboutFeedback = () => {
                     <p className="text-sm">{feedback.location}</p>
                   </div>
                 </div>
-              </>
+              </div>
             </SwiperSlide>
           ))}
         </div>

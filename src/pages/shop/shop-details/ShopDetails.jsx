@@ -31,7 +31,7 @@ const ShopDetails = () => {
         addWishlistDb(product)
     }
     return (
-        <div className="px-5 md:px-10 lg:px-14 my-10">
+        <div className="px-5 md:px-10 lg:px-14 my-10 max-w-[1400px] mx-auto">
             {
                 product? <>
                     <div className='sm:flex items-center'>

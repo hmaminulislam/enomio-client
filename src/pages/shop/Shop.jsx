@@ -29,11 +29,13 @@ const Shop = ({CategoryProducts}) => {
             {
                 products? <>
                 {
-                    !pathname.includes("/categories") && <div className='shop-banner h-64 flex items-center mt-10'>
-                    <h2 className='text-4xl font-semibold sm:pl-52 pl-5'>Shop</h2>
+                    !pathname.includes("/categories") && <div className='shop-banner h-64 flex items-center justify-start mt-10'>
+                    <div className='max-w-[1400px] mx-auto'>
+                    <h2 className='text-4xl font-semibold text-primary mr-72 lg:mr-96'>Shop</h2>
+                    </div>
                 </div>
                 }
-                <div>
+                <div className='max-w-[1400px] mx-auto'>
                     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-20 px-5 md:px-10 lg:px-14 my-20'>
                         <ProductCard products={CategoryProducts? CategoryProducts: products} />
                     </div>

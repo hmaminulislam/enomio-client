@@ -61,7 +61,7 @@ const Search = ({setMobileMenu}) => {
         <div className="flex-1 flex justify-end md:ml-4 lg:ml-0">
           <div className="hidden md:block">
             <div className="flex items-center mr-8">
-              <i className="fa-solid fa-phone text-3xl text-gray-500 mr-2"></i>
+              <i className="fa-solid fa-phone text-3xl text-black mr-2"></i>
               <div>
                 <h4 className="text-xs">Call now us</h4>
                 <h3 className="font-semibold">01439493489</h3>
@@ -69,10 +69,10 @@ const Search = ({setMobileMenu}) => {
             </div>
           </div>
           <Link to="/wishlist" className="sm:mr-8 mr-4">
-            <i className="fa-regular fa-heart sm:text-3xl text-2xl"></i>
+            <i className="fa-regular text-black fa-heart sm:text-3xl text-2xl"></i>
           </Link>
           <Link to={"/cart"} className="relative mr-4 sm:mr-8 md:mr-0">
-            <i className="fa-solid fa-bag-shopping sm:text-3xl text-2xl"></i>
+            <i className="fa-solid fa-bag-shopping text-black sm:text-3xl text-2xl"></i>
             <span className="bg-primary w-5 h-5 rounded-full flex justify-center items-center font-semibold absolute top-[-7px] right-[-7px] text-zinc-50 text-xs">
               {productCart ? productCart : "0"}
             </span>

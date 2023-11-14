@@ -6,7 +6,7 @@ const BlogDetails = () => {
   const blog = location.state.blog;
   
   return (
-    <div className="md:flex px-5 md:px-10 lg:px-14 py-20 gap-20">
+    <div className="md:flex px-5 md:px-10 lg:px-14 py-20 gap-20 max-w-[1400px] mx-auto">
       <div className="w-4/6">
         <img className="w-full" src={blog.img} alt="" />
         <div className="flex items-center gap-2 my-4">

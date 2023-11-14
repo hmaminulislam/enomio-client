@@ -15,7 +15,7 @@ const BestSelling = () => {
     return (
         <div className='my-14'>
             <div>
-                <h3 className='mb-3 text-xl'>Best Selling</h3>
+                <h3 className='mb-3 text-xl sm:text-2xl'>Best Selling</h3>
             </div>
             {
                 products ? <>

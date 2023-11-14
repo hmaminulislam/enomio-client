@@ -16,7 +16,7 @@ const TrendingCategory = () => {
             <div className='trending-shoes flex justify-end items-center px-10 rounded'>
                 <div>
                     <h4 className='text-xl text-white'>TRENDING</h4>
-                    <h3 className='text-3xl font-bold text-white pb-2'>New Sneaker</h3>
+                    <h3 className='text-3xl font-bold text-primary pb-2'>New Sneaker</h3>
                     <div className='btn-container'>
                         <button className='text-white btn-trending flex items-center'>Shop Now <i className="fa-solid fa-arrow-right ml-2"></i>
                         </button>

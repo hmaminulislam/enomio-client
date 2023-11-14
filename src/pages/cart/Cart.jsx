@@ -52,7 +52,7 @@ const Cart = () => {
         }
     }
     return (
-            <div>
+            <div className='max-w-[1400px] mx-auto'>
             {
                 products?
                 <>

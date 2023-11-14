@@ -4,28 +4,31 @@ import './Contact.css'
 const Contact = () => {
     return (
         <div>
-            <div className='contact-banner h-64 mt-12'>
+            <div className='contact-banner h-64 mt-7'>
                 <h3 className='text-center text-3xl text-white font-semibold'>Contact Us</h3>
             </div>
-            <div className='sm:flex justify-between gap-20 px-5 md:px-10 lg:px-14 my-14'>
-                <div>
-                    <div className='my-5'>
+            <div className='px-5 md:px-10 lg:px-14 my-14 max-w-[1400px] mx-auto'>
+                <div className='grid md:grid-cols-3 grid-cols-1 gap-4 md:gap-10 mb-10 md:mb-20'>
+                    <div className='contact-card'>
+                        <i class="fa-regular fa-building text-[35px] text-primary mb-4"></i>
                         <h4 className='text-xl font-semibold mb-2'>Headquarters</h4>
                         <p className='text-sm'>1600 Amphitheatre Parkway</p>
                         <p className='text-sm'>New York WC1 1BA</p>
                     </div>
-                    <div className='my-5'>
+                    <div className='contact-card'>
+                        <i class="fa-solid fa-phone text-[35px] text-primary mb-4"></i>
                         <h4 className='text-xl font-semibold mb-2'>Phone Number</h4>
                         <p className='text-sm'>02994 340 0943</p>
                         <p className='text-sm'>23340 040 0434</p>
                     </div>
-                    <div className='my-5'>
+                    <div className='contact-card'>
+                        <i class="fa-regular fa-envelope text-[35px] text-primary mb-4"></i>
                         <h4 className='text-xl font-semibold mb-2'>Support</h4>
                         <p className='text-sm'>support@enomio.com</p>
                         <p className='text-sm'>enomio@customer.com</p>
                     </div>
                 </div>
-                <div className='w-full'>
+                <div className='max-w-[850px] mx-auto'>
                     <h4 className='text-2xl font-semibold my-5'>Let’s Connect</h4>
                     <form>
                         <div className='grid grid-cols-2 sm:gap-8 gap-5'>

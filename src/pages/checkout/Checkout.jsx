@@ -38,7 +38,7 @@ const Checkout = () => {
       });
   };
   return (
-    <div>
+    <div className="max-w-[1400px] mx-auto">
       <div className="px-5 md:px-10 lg:px-14 mb-20">
         <h4 className="text-center text-2xl font-semibold my-10">Checkout</h4>
         <form onSubmit={handleOrderBtn} className="lg:flex justify-between">

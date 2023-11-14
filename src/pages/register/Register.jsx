@@ -36,7 +36,7 @@ const Register = () => {
 
   
   return (
-    <div className="px-5">
+    <div className="px-5 max-w-[1400px] mx-auto">
       <h2 className="text-2xl font-semibold text-center mb-3 mt-10">Register</h2>
       <div className="flex justify-center items-center bg-base-200 border border-gray-200 mb-10 w-full sm:w-8/12 md:w-7/12 lg:w-4/12 mx-auto">
         <div className="w-full px-10 mt-10">

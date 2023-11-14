@@ -15,7 +15,7 @@ const Categories = () => {
             })
     }, [cate])
     return (
-        <div className='my-20 sm:flex items-start gap-20 pl-5 sm:px-10 px-5'>
+        <div className='my-20 sm:flex items-start gap-20 pl-5 sm:px-10 px-5 max-w-[1400px] mx-auto'>
             <div className='categor-btn-container sm:sticky'>
                 <div className='sm:flex flex-col grid grid-cols-2 gap-5'>
                     <button onClick={() => setCate('men')} className='px-8 py-3 bg-primary  text-white sm:mb-5 mb-0'>Men</button>
@@ -31,7 +31,7 @@ const Categories = () => {
             <div className='categories-products mt-20 sm:mt-0'>
             {
                 products? <>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20 px-5 md:px-10 lg:px-14'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20 px-5 md:pl-10 md:pr-0 lg:pl-14'>
                     <ProductCard products={ products && products} />
                 </div>  
             </>
