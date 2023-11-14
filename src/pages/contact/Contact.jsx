@@ -39,7 +39,7 @@ const Contact = () => {
                             <textarea required className="textarea w-full border border-gray-400 h-32" placeholder='Your message...'></textarea>
                         </div>
                         <div className='sm:my-8 my-4'>
-                            <button className='px-8 py-3 bg-primary rounded-md hover:bg-emerald-600 text-white block ml-auto'>Submit</button>
+                            <button className='px-8 py-3 border-[1px] border-primary bg-primary rounded-full hover:bg-white hover:text-primary transition duration-500 text-white block ml-auto'>Submit</button>
                         </div>
                     </form>
                 </div>

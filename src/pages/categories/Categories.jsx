@@ -15,30 +15,87 @@ const Categories = () => {
             })
     }, [cate])
     return (
-        <div className='my-20 sm:flex items-start gap-20 pl-5 sm:px-10 px-5 max-w-[1400px] mx-auto'>
-            <div className='categor-btn-container sm:sticky'>
-                <div className='sm:flex flex-col grid grid-cols-2 gap-5'>
-                    <button onClick={() => setCate('men')} className='px-8 py-3 bg-primary  text-white sm:mb-5 mb-0'>Men</button>
-                    <button onClick={() => setCate('women')} className='px-8 py-3 bg-primary  text-white sm:mb-5 mb-0'>Women</button>
-                    <button onClick={() => setCate('tshirt')} className='px-8 py-3 bg-primary  text-white sm:mb-5 mb-0'>T-shirt</button>
-                    <button onClick={() => setCate('laptop')} className='px-8 py-3 bg-primary  text-white sm:mb-5 mb-0'>Laptop</button>
-                    <button onClick={() => setCate('bag')} className='px-8 py-3 bg-primary  text-white sm:mb-5 mb-0'>Bag</button>
-                    <button onClick={() => setCate('jacket')} className='px-8 py-3 bg-primary  text-white sm:mb-5 mb-0'>Jacket</button>
-                    <button onClick={() => setCate('pant')} className='px-8 py-3 bg-primary  text-white sm:mb-5 mb-0'>Pant</button>
-                    <button onClick={() => setCate('shoes')} className='px-8 py-3 bg-primary  text-white sm:mb-5 mb-0'>Shoes</button>
-                </div>
-            </div>
-            <div className='categories-products mt-20 sm:mt-0'>
-            {
-                products? <>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20 px-5 md:pl-10 md:pr-0 lg:pl-14'>
-                    <ProductCard products={ products && products} />
-                </div>  
-            </>
-            : <Spinner height={'h-60'} />
-            }
-            </div>
+      <div className="my-20 px-5 md:px-10 lg:px-14 max-w-[1400px] mx-auto">
+        <div className="">
+          <div className="flex flex-wrap gap-5">
+            <button
+              onClick={() => setCate("men")}
+              className={`sm:px-8 px-6 sm:py-3 py-2 text-sm sm:text-base border-[1px] border-primary rounded-full text-primary hover:bg-primary hover:text-white hover:border-white transition duration-500 ${
+                cate === "men" ? "bg-primary text-white" : ""
+              }`}
+            >
+              Men
+            </button>
+            <button
+              onClick={() => setCate("women")}
+              className={`sm:px-8 px-6 sm:py-3 py-2 text-sm sm:text-base border-[1px] border-primary rounded-full text-primary hover:bg-primary hover:text-white hover:border-white transition duration-500 ${
+                cate === "women" ? "bg-primary text-white" : ""
+              }`}
+            >
+              Women
+            </button>
+            <button
+              onClick={() => setCate("tshirt")}
+              className={`sm:px-8 px-6 sm:py-3 py-2 text-sm sm:text-base border-[1px] border-primary rounded-full text-primary hover:bg-primary hover:text-white hover:border-white transition duration-500 ${
+                cate === "tshirt" ? "bg-primary text-white" : ""
+              }`}
+            >
+              T-shirt
+            </button>
+            <button
+              onClick={() => setCate("laptop")}
+              className={`sm:px-8 px-6 sm:py-3 py-2 text-sm sm:text-base border-[1px] border-primary rounded-full text-primary hover:bg-primary hover:text-white hover:border-white transition duration-500 ${
+                cate === "laptop" ? "bg-primary text-white" : ""
+              }`}
+            >
+              Laptop
+            </button>
+            <button
+              onClick={() => setCate("bag")}
+              className={`sm:px-8 px-6 sm:py-3 py-2 text-sm sm:text-base border-[1px] border-primary rounded-full text-primary hover:bg-primary hover:text-white hover:border-white transition duration-500 ${
+                cate === "bag" ? "bg-primary text-white" : ""
+              }`}
+            >
+              Bag
+            </button>
+            <button
+              onClick={() => setCate("jacket")}
+              className={`sm:px-8 px-6 sm:py-3 py-2 text-sm sm:text-base border-[1px] border-primary rounded-full text-primary hover:bg-primary hover:text-white hover:border-white transition duration-500 ${
+                cate === "jacket" ? "bg-primary text-white" : ""
+              }`}
+            >
+              Jacket
+            </button>
+            <button
+              onClick={() => setCate("pant")}
+              className={`sm:px-8 px-6 sm:py-3 py-2 text-sm sm:text-base border-[1px] border-primary rounded-full text-primary hover:bg-primary hover:text-white hover:border-white transition duration-500 ${
+                cate === "pant" ? "bg-primary text-white" : ""
+              }`}
+            >
+              Pant
+            </button>
+            <button
+              onClick={() => setCate("shoes")}
+              className={`sm:px-8 px-6 sm:py-3 py-2 text-sm sm:text-base border-[1px] border-primary rounded-full text-primary hover:bg-primary hover:text-white hover:border-white transition duration-500 ${
+                cate === "shoes" ? "bg-primary text-white" : ""
+              }`}
+            >
+              Shoes
+            </button>
+          </div>
         </div>
+        <div className="categories-products mt-10 sm:mt-12">
+          {products ? (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-20">
+                <ProductCard products={products && products} />
+              </div>
+            </>
+          ) : (
+            <Spinner height={"h-60"} />
+          )}
+        </div>
+      </div>
     );
 };
 

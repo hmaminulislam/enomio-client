@@ -3,10 +3,10 @@
   height: 100%;
 }
 .testimonial-card {
-  box-shadow: 0px 0px 3px 1px hsla(0, 0%, 87%, 0.33);
+  box-shadow: 0px 0px 3px 1px hsla(0, 0%, 87%, 0.404);
   padding: 35px 25px;
   border-radius: 12px;
 }
 .swiper.swiper-initialized.swiper-horizontal.swiper-pointer-events.swiper-free-mode.swiper-backface-hidden.mySwiper {
-  padding: 20px 5px;
+  padding: 20px 10px;
 }

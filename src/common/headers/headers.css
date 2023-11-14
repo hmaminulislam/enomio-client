@@ -33,7 +33,7 @@
 .menu-link::after {
     position: absolute;
     content: "";
-    background-color: #000000;
+    background-color: #31A6E9;
     height: 2px;
     width: 0;
     left: 0;

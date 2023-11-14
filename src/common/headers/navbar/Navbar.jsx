@@ -9,7 +9,7 @@ const Navbar = ({mobileMenu, setMobileMenu}) => {
       logOut()
         .then((result) => {})
         .catch((error) => console.log(error));
-    };
+  };
     return (
       <>
         <div className="px-5 md:px-10 lg:px-14 hidden md:block mt-1 max-w-[1400px] mx-auto">
@@ -17,22 +17,34 @@ const Navbar = ({mobileMenu, setMobileMenu}) => {
             <div>
               <ul className="flex">
                 <NavLink to="/" className="mr-7">
-                  <li className="menu-link text-black hover:text-primary">Home</li>
+                  <li className="menu-link text-black hover:text-primary">
+                    Home
+                  </li>
                 </NavLink>
                 <NavLink to="/categories" className="mr-7">
-                  <li className="menu-link text-black hover:text-primary">Categories</li>
+                  <li className="menu-link text-black hover:text-primary">
+                    Categories
+                  </li>
                 </NavLink>
                 <NavLink to="/shop" className="mr-7">
-                  <li className="menu-link text-black hover:text-primary">Shop</li>
+                  <li className="menu-link text-black hover:text-primary">
+                    Shop
+                  </li>
                 </NavLink>
                 <NavLink to="/blog" className="mr-7">
-                  <li className="menu-link text-black hover:text-primary">Blog</li>
+                  <li className="menu-link text-black hover:text-primary">
+                    Blog
+                  </li>
                 </NavLink>
                 <NavLink to="/about" className="mr-7">
-                  <li className="menu-link text-black hover:text-primary">About</li>
+                  <li className="menu-link text-black hover:text-primary">
+                    About
+                  </li>
                 </NavLink>
                 <NavLink to="/contact" className="mr-7">
-                  <li className="menu-link text-black hover:text-primary">Contact</li>
+                  <li className="menu-link text-black hover:text-primary">
+                    Contact
+                  </li>
                 </NavLink>
               </ul>
             </div>
@@ -58,22 +70,46 @@ const Navbar = ({mobileMenu, setMobileMenu}) => {
             </NavLink>
             <div className="text-base-content">
               <ul className="p-4 flex flex-col">
-                <NavLink className="text-white hover:text-primary" to="/">
+                <NavLink
+                  onClick={() => setMobileMenu(false)}
+                  className="text-white hover:text-primary"
+                  to="/"
+                >
                   <li className="mb-3 menu-link inline-block">Home</li>
                 </NavLink>
-                <NavLink className="text-white hover:text-primary" to="/categories">
+                <NavLink
+                  onClick={() => setMobileMenu(false)}
+                  className="text-white hover:text-primary"
+                  to="/categories"
+                >
                   <li className="mb-3 menu-link inline-block">Categories</li>
                 </NavLink>
-                <NavLink className="text-white hover:text-primary" to="/shop">
+                <NavLink
+                  onClick={() => setMobileMenu(false)}
+                  className="text-white hover:text-primary"
+                  to="/shop"
+                >
                   <li className="mb-3 menu-link inline-block">Shop</li>
                 </NavLink>
-                <NavLink className="text-white hover:text-primary" to="/blog">
+                <NavLink
+                  onClick={() => setMobileMenu(false)}
+                  className="text-white hover:text-primary"
+                  to="/blog"
+                >
                   <li className="mb-3 menu-link inline-block">Blog</li>
                 </NavLink>
-                <NavLink className="text-white hover:text-primary" to="/about">
+                <NavLink
+                  onClick={() => setMobileMenu(false)}
+                  className="text-white hover:text-primary"
+                  to="/about"
+                >
                   <li className="mb-3 menu-link inline-block">About</li>
                 </NavLink>
-                <NavLink className="text-white hover:text-primary" to="/contact">
+                <NavLink
+                  onClick={() => setMobileMenu(false)}
+                  className="text-white hover:text-primary"
+                  to="/contact"
+                >
                   <li className="mb-3 menu-link inline-block">Contact</li>
                 </NavLink>
               </ul>

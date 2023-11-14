@@ -44,7 +44,7 @@ const AboutFeedback = () => {
   ];
   return (
     <div className="my-20">
-      <h2 className="text-center text-3xl font-semibold mb-12">
+      <h2 className="text-center text-2xl md:text-3xl font-semibold mb-5 lg:mb-10">
         Customers Feedback
       </h2>
       <Swiper

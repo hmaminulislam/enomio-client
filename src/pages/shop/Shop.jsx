@@ -31,7 +31,7 @@ const Shop = ({CategoryProducts}) => {
                 {
                     !pathname.includes("/categories") && <div className='shop-banner h-64 flex items-center justify-start mt-10'>
                     <div className='max-w-[1400px] mx-auto'>
-                    <h2 className='text-4xl font-semibold text-primary mr-72 lg:mr-96'>Shop</h2>
+                    <h2 className='text-4xl font-semibold text-primary mr-36 lg:mr-96'>Shop</h2>
                     </div>
                 </div>
                 }
